@@ -31,7 +31,7 @@ function add_jquery_script() {
 }    
 add_action('wp_enqueue_scripts', 'add_jquery_script');
 
-wp_enqueue_script( 'easingjquery', get_bloginfo('template_directory').'js/jquery.easing.1.3.js', array( 'jquery' ));
+wp_enqueue_script( 'easing', get_bloginfo('template_directory').'/js/jquery.easing.1.3.js', array( 'jquery' ));
 
 
 /**
