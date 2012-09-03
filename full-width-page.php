@@ -4,7 +4,7 @@
  * Description: A full-width template with no sidebar
  *
  * @package WordPress
- * @subpackage themename
+ * @subpackage handcrafted
  */
 
 get_header(); ?>

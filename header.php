@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage themename
+ * @subpackage handcrafted
  */
 ?><!DOCTYPE html>
 <!--[if lt IE 7 ]> <html <?php language_attributes(); ?> class="ie6"> <![endif]-->
@@ -63,20 +63,32 @@
 	<body <?php body_class(); ?>>
 	<div id="page" class="hfeed">
 		<header id="branding" role="banner">
-				<hgroup>
-					<h1 id="site-title"><span><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
-					<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-				</hgroup>
-				
-				<nav id="utility" role="article">
-					<?php wp_nav_menu( array( 'theme_location' => 'utility' ) ); ?>
-				</nav><!-- #utility -->
+				<div id="header-wrapper">
+					<hgroup>
+					<div id="site-title"><span><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+					<img alt="<?php /* bloginfo( 'name' ); */ ?>" src="<?php bloginfo('template_url') ?>/images/logo.png">
+					</a></span></div>
+					<!-- <h2 id="site-description"><?php bloginfo( 'description' ); ?></h2> -->
+					</hgroup>
+					
+					<nav id="utility" role="article">
+						<?php wp_nav_menu( array( 'theme_location' => 'utility' ) ); ?>
+					</nav><!-- #utility -->
+				</div>
 	
+				<div class="centerwrapper">
 				<nav id="access" role="article">
-					<h1 class="section-heading"><?php _e( 'Main menu', 'themename' ); ?></h1>
+					<?php is_subpage(); ?> <!-- Adds menu title and byline -->
 					<div class="skip-link visuallyhidden"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'themename' ); ?>"><?php _e( 'Skip to content', 'themename' ); ?></a></div>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+					<?php 
+					if ( is_page_template('bureau.php') ) {
+						wp_nav_menu( array( 'theme_location' => 'bureau' ) );	// Returns true when 'about.php' is being used.
+					} else {
+						wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Returns false when 'about.php' is not being used.
+					}
+					?>
 				</nav><!-- #access -->
+				</div>
 		</header><!-- #branding -->
 	
 	

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage themename
+ * @subpackage handcrafted
  */
 
 get_header(); ?>
@@ -23,7 +23,7 @@ get_header(); ?>
 					</div><!-- .entry-content -->
 				</article><!-- #post-<?php the_ID(); ?> -->
 
-				<?php comments_template( '', true ); ?>
+<!-- 				<?php comments_template( '', true ); ?> -->
 
 			</div><!-- #content -->
 		</div><!-- #primary -->

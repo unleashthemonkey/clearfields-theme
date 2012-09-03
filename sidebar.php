@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage themename
+ * @subpackage handcrafted
  */
 ?>
 		<div id="secondary" class="widget-area">

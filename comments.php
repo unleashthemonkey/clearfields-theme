@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage themename
+ * @subpackage handcrafted
  */
 
 if ( ! function_exists( 'handcraftedwp_comment' ) ) :
