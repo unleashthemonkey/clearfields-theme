@@ -98,6 +98,88 @@ register_nav_menus( array(
 	'bureau' => __( 'bureau menu', 'themename' )
 ) );
 
+
+/**
+ * This function is a conditional used to check if the page is a parent or a child to display the correct info in the main navmenu
+ */
+function is_subpage() {
+    global $post;                              // load details about this page
+
+    if ( is_page() && $post->post_parent ) {   // test to see if the page has a parent
+        
+
+        $filter = array(
+        	'page_id'=> $post->post_parent
+        );
+              
+        $parent_pages =  new WP_query($filter);
+        
+        if ($parent_pages->have_posts()) {
+	        while ($parent_pages->have_posts()) : $parent_pages->the_post();
+	        $parent_page_title = get_the_title();
+	        $permalink = get_permalink();
+	    echo '<a href="'.$permalink.'"><h1 class="section-heading">'.$parent_page_title.'</h1>';
+	        	the_excerpt();
+	        	echo '</a>';
+	        endwhile;
+	        wp_reset_postdata();
+	    } else {
+	    	echo 'cant load parent data';
+	    }
+        
+    } else {                                   // there is no parent so ...
+        $page_title = get_the_title($post->ID);
+        $page_excerpt = get_the_excerpt($post->ID);
+        $permalink = get_permalink();
+		echo '<a href="'.$permalink.'"><h1 class="section-heading">'.$page_title.'</h1>';	//display parent page title
+		echo '<p>'.$page_excerpt.'</p></a>'; //display parent page excerpt
+		}
+}
+
+/**
+ * This is a custom walker to enable descriptions for the front page menu.
+ */
+class fpmenu_walker extends Walker_Nav_Menu
+{
+      function start_el(&$output, $item, $depth, $args)
+      {
+           global $wp_query;
+           $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+
+           $class_names = $value = '';
+
+           $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+
+           $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+           $class_names = ' class="'. esc_attr( $class_names ) . ' visuallyhidden"';
+
+           $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+
+           $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+           $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+           $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+           $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+
+           $prepend = '<h1>';
+           $append = '</h1>';
+           $description  = ! empty( $item->description ) ? '<h2>'.esc_attr( $item->description ).'</h2>' : '';
+
+           if($depth != 0)
+           {
+                     $description = $append = $prepend = "";
+           }
+
+            $item_output = $args->before;
+            $item_output .= '<a'. $attributes .'>';
+            $item_output .= $args->link_before .$prepend.apply_filters( 'the_title', $item->title, $item->ID ).$append;
+            $item_output .= $description.$args->link_after;
+            $item_output .= '</a>';
+            $item_output .= $args->after;
+
+            $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+            }
+}
+
 /** 
  * Add default posts and comments RSS feed links to head
  */
