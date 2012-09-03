@@ -6,6 +6,18 @@ jQuery(document).ready(function ($) {
 
 	revealmenu();
 	revealhome();
+	
+	$('#home #access ul li').hover(
+        function () {
+            //show its submenu
+            $('ul', this).stop().slideDown(100);
+ 
+        },
+        function () {
+            //hide its submenu
+            $('ul', this).stop().slideUp(100);         
+        }
+    );
 });
 
 function revealmenu()
