@@ -78,6 +78,7 @@ function customize_meta_boxes() {
   //remove_post_type_support("page","custom-fields"); //Remove custom-fields Support
   
 }
+
 add_action('admin_init','customize_meta_boxes');
 
 /**
@@ -91,10 +92,94 @@ add_post_type_support( 'page', 'excerpt' );
  * This theme uses wp_nav_menus() for the header menu, utility menu and footer menu.
  */
 register_nav_menus( array(
+	'frontpage' => __( 'Frontpage Menu', 'themename' ),
 	'primary' => __( 'Primary Menu', 'themename' ),
 	'footer' => __( 'Footer Menu', 'themename' ),
-	'utility' => __( 'Utility Menu', 'themename' )
+	'utility' => __( 'Utility Menu', 'themename' ),
+	'bureau' => __( 'bureau menu', 'themename' )
 ) );
+
+
+/**
+ * This function is a conditional used to check if the page is a parent or a child to display the correct info in the main navmenu
+ */
+function is_subpage() {
+    global $post;                              // load details about this page
+
+    if ( is_page() && $post->post_parent ) {   // test to see if the page has a parent
+        
+
+        $filter = array(
+        	'page_id'=> $post->post_parent
+        );
+              
+        $parent_pages =  new WP_query($filter);
+        
+        if ($parent_pages->have_posts()) {
+	        while ($parent_pages->have_posts()) : $parent_pages->the_post();
+	        $parent_page_title = get_the_title();
+	        $permalink = get_permalink();
+	    echo '<a href="'.$permalink.'"><h1 class="section-heading">'.$parent_page_title.'</h1>';
+	        	the_excerpt();
+	        	echo '</a>';
+	        endwhile;
+	        wp_reset_postdata();
+	    } else {
+	    	echo 'cant load parent data';
+	    }
+        
+    } else {                                   // there is no parent so ...
+        $page_title = get_the_title($post->ID);
+        $page_excerpt = get_the_excerpt($post->ID);
+        $permalink = get_permalink();
+		echo '<a href="'.$permalink.'"><h1 class="section-heading">'.$page_title.'</h1>';	//display parent page title
+		echo '<p>'.$page_excerpt.'</p></a>'; //display parent page excerpt
+		}
+}
+
+/**
+ * This is a custom walker to enable descriptions for the front page menu.
+ */
+class fpmenu_walker extends Walker_Nav_Menu
+{
+      function start_el(&$output, $item, $depth, $args)
+      {
+           global $wp_query;
+           $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+
+           $class_names = $value = '';
+
+           $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+
+           $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+           $class_names = ' class="'. esc_attr( $class_names ) . ' visuallyhidden"';
+
+           $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+
+           $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+           $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+           $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+           $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+
+           $prepend = '<h1>';
+           $append = '</h1>';
+           $description  = ! empty( $item->description ) ? '<h2>'.esc_attr( $item->description ).'</h2>' : '';
+
+           if($depth != 0)
+           {
+                     $description = $append = $prepend = "";
+           }
+
+            $item_output = $args->before;
+            $item_output .= '<a'. $attributes .'>';
+            $item_output .= $args->link_before .$prepend.apply_filters( 'the_title', $item->title, $item->ID ).$append;
+            $item_output .= $description.$args->link_after;
+            $item_output .= '</a>';
+            $item_output .= $args->after;
+
+            $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+            }
+}
 
 /** 
  * Add default posts and comments RSS feed links to head
@@ -145,6 +230,8 @@ add_filter('admin_bar_menu', 'admin_bar_replace_howdy', 25);
  * This enables post formats. If you use this, make sure to delete any that you aren't going to use.
  */
 //add_theme_support( 'post-formats', array( 'aside', 'audio', 'image', 'video', 'gallery', 'chat', 'link', 'quote', 'status' ) );
+
+add_theme_support( 'post-formats', array( 'aside', 'audio', 'image', 'link' ) );
 
 /**
  * Register widgetized area and update sidebar with default widgets
@@ -206,8 +293,8 @@ if (!current_user_can('manage_options')) {
 	add_action('admin_head', 'themename_configure_dashboard_menu'); // Add action to hide admin menu items
 }
 
-
 ?>
+
 <?php // asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
 //	 change the UA-XXXXX-X to be your site's ID
 /*add_action('wp_footer', 'async_google_analytics');
@@ -222,52 +309,4 @@ function async_google_analytics() { ?>
 			s.parentNode.insertBefore(g, s);
 		})(document, 'script');
 	</script>
-<?php }*/ ?>
-<?php /*
- * A default custom post type. DELETE from here to the end if you don't want any custom post types
- */
-/*add_action('init', 'create_boilertemplate_cpt');
-function create_boilertemplate_cpt() 
-{
-  $labels = array(
-    'name' => _x('HandcraftedWPTemplate CPT', 'post type general name'),
-    'singular_name' => _x('HandcraftedWPTemplate CPT Item', 'post type singular name'),
-    'add_new' => _x('Add New', 'handcraftedwptemplate_robot'),
-    'add_new_item' => __('Add New Item'),
-    'edit_item' => __('Edit Item'),
-    'new_item' => __('New Item'),
-    'view_item' => __('View Item'),
-    'search_items' => __('Search Items'),
-    'not_found' =>  __('No items found'),
-    'not_found_in_trash' => __('No items found in Trash'), 
-    'parent_item_colon' => ''
-  );
-  $args = array(
-    'labels' => $labels,
-    'public' => true,
-    'show_ui' => true, 
-    'query_var' => true,
-    'rewrite' => true,
-    'capability_type' => 'page',
-    'hierarchical' => false,
-    'menu_position' => 20,
-    'supports' => array('title','editor')
-  ); 
-  register_post_type('handcraftedwptemplate_robot',$args);
-}*/
-/*
- * This is for a custom icon with a colored hover state for your custom post types. You can download the custom icons here 
- http://randyjensenonline.com/thoughts/wordpress-custom-post-type-fugue-icons/
- */
-/*add_action( 'admin_head', 'cpt_icons' );
-function cpt_icons() {
-    ?>
-    <style type="text/css" media="screen">
-        #menu-posts-handcraftedwptemplaterobot .wp-menu-image {
-            background: url(<?php bloginfo('template_url') ?>/images/robot.png) no-repeat 6px -17px !important;
-        }
-		#menu-posts-handcraftedwptemplaterobot:hover .wp-menu-image, #menu-posts-handcraftedwptemplaterobot.wp-has-current-submenu .wp-menu-image {
-            background-position:6px 7px!important;
-        }
-    </style>
 <?php }*/ ?>
