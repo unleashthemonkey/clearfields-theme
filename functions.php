@@ -91,9 +91,11 @@ add_post_type_support( 'page', 'excerpt' );
  * This theme uses wp_nav_menus() for the header menu, utility menu and footer menu.
  */
 register_nav_menus( array(
+	'frontpage' => __( 'Frontpage Menu', 'themename' ),
 	'primary' => __( 'Primary Menu', 'themename' ),
 	'footer' => __( 'Footer Menu', 'themename' ),
-	'utility' => __( 'Utility Menu', 'themename' )
+	'utility' => __( 'Utility Menu', 'themename' ),
+	'bureau' => __( 'bureau menu', 'themename' )
 ) );
 
 /** 
