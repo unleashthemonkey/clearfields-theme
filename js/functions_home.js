@@ -7,17 +7,37 @@ jQuery(document).ready(function ($) {
 	revealmenu();
 	revealhome();
 	
+/*
 	$('#home #access ul li').hover(
         function () {
             //show its submenu
-            $('ul', this).stop().slideDown(100);
+            $('ul li', this).first().stop().fadeIn(100, function showNext() {
+            	$(this).next('li').stop().fadeIn(100, showNext)
+            });
  
         },
         function () {
             //hide its submenu
-            $('ul', this).stop().slideUp(100);         
+            $('ul li', this).last().stop().fadeOut(100, function showNext() {
+            	$(this).prev('li').stop().fadeOut(100, showNext)
+            });       
         }
     );
+*/
+	$('#home #access ul li').hover(
+        function () {
+            //show its submenu
+            $('ul li', this).stop().fadeIn(400);
+            $('ul', this).stop().slideDown(100,'easeInOutQuad'); 
+        },
+        function () {
+            //hide its submenu
+            $('ul li', this).stop().fadeOut(200);
+            $('ul', this).stop().slideUp(200,'easeInOutQuad');       
+        }
+    );
+
+
 });
 
 function revealmenu()
