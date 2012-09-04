@@ -42,10 +42,10 @@ jQuery(document).ready(function ($) {
 
 function revealmenu()
 {
-	$("#menu-frontpage-menu > li.menu-item").each(function(i)
+	$(".menu > li.menu-item").each(function(i)
 	{
 		// margin left = - ([width of element] + [total vertical padding of element])
-		$("#menu-frontpage-menu li.menu-item").removeClass("visuallyhidden")
+		$(".menu li.menu-item").removeClass("visuallyhidden")
 		$(this).hide();
 		$(this).delay(500+200*i).fadeIn(600);
 	});
