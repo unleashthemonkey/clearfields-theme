@@ -208,8 +208,28 @@ body.home{
 	height: 80px;
 	margin-bottom: 60px;
 }
+header {
+	position: relative;
+}
 #site-title img{
 	margin: 30px 0 0 79px;
+}
+.utility {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: inline;
+}
+#searchform {
+	display: inline;
+	margin-left: 10px;
+}
+#searchsubmit {
+	background-color: transparent;
+	text-decoration: none;
+	border: none;
+	color: #ffffff;
+	cursor: pointer;
 }
 #primary {
 	margin: 0 auto;
