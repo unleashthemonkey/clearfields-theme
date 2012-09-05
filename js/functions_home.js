@@ -56,6 +56,7 @@ function revealhome()
 	mostrar("#slidecaption");
 	mostrar("hgroup");
 	mostrar("#colophon");
+	mostrar(".utility");
 }
 
 function ocultar(que) {
