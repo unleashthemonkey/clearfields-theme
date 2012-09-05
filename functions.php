@@ -376,7 +376,7 @@ function subtitle_save_postdata( $post_id ) {
 
 	$mydata = $_POST['subtitle_new_field'];
 
-add_post_meta($post_id, imdburl_new_field, $mydata, true);
+add_post_meta($post_id, subtitle_new_field, $mydata, true);
 }
 
 ?>
