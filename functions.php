@@ -293,7 +293,6 @@ if (!current_user_can('manage_options')) {
 	add_action('admin_head', 'themename_configure_dashboard_menu'); // Add action to hide admin menu items
 }
 
-// Defines which twitter icon to show
 function twitpic(){
 	if ( is_front_page() ) {
 		echo "twit.png";
@@ -302,15 +301,6 @@ function twitpic(){
 	}
 }
 
-// Default function for hiding elements (normally used at pageload)
-function ocultar(que) {
-	$(que).fadeOut(400).show().addClass("invisible");
-}
-
-// Default function for showing elements	
-function mostrar(que) {
-	$(que).removeClass("invisible").hide().delay(500).fadeIn(1000);
-}
 ?>
 <?php // asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
 //	 change the UA-XXXXX-X to be your site's ID
