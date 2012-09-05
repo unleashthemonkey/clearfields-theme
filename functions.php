@@ -293,6 +293,13 @@ if (!current_user_can('manage_options')) {
 	add_action('admin_head', 'themename_configure_dashboard_menu'); // Add action to hide admin menu items
 }
 
+function twitpic(){
+	if ( is_front_page() ) {
+		echo "twit.png";
+	} else {
+		echo "twit-black.png";
+	}
+}
 
 ?>
 <?php // asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet

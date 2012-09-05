@@ -216,13 +216,27 @@ header {
 }
 .utility {
 	position: absolute;
-	top: 0;
+	top: 15px;
 	right: 0;
 	display: inline;
+	color: #ffffff;
+	font-size: 11px;
+	width: 245px;
+}
+.utility > * {
+	float: left;
+}
+.utility a{
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: bold;
+}
+#login{
+	margin: 2px 0 0;
 }
 #searchform {
 	display: inline;
-	margin-left: 10px;
+	margin-left: 15px;
 }
 #searchsubmit {
 	background-color: transparent;
@@ -230,6 +244,10 @@ header {
 	border: none;
 	color: #ffffff;
 	cursor: pointer;
+	font-weight: bold;
+}
+#twithome{
+	margin-left: 10px;
 }
 #primary {
 	margin: 0 auto;
