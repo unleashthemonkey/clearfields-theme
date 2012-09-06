@@ -15,6 +15,11 @@ function loadanimation(){
 		revealpage();
 	}
 }
+
+function exitanimation(){
+	
+}
+
 function revealpagenow()
 {
 	mostrarnow("#header-wrapper");
