@@ -18,9 +18,6 @@ get_header(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 					<header class="entry-header">
 						<h1 class="entry-title"><?php the_title(); ?></h1>
-						<?php  	$subtitle = get_post_meta($post->ID, 'subtitle_new_field', true);
-						echo $subtitle;
-						?>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
