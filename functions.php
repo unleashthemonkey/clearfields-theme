@@ -355,7 +355,7 @@ function utm_save_post_subtitle_info( $post_id, $post ) {
 		return $post_id;
 
 	/* Get the posted data and sanitize it for use as an HTML class. */
-	$new_meta_value = ( isset( $_POST['utm-subtitle-info'] ) ? sanitize_html_class( $_POST['utm-subtitle-info'] ) : '' );
+	$new_meta_value = ( isset( $_POST['utm-subtitle-info'] ) ? sanitize_text_field( $_POST['utm-subtitle-info'] ) : '' );
 
 	/* Get the meta key. */
 	$meta_key = 'utm_subtitle_info';
