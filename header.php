@@ -63,7 +63,7 @@
 	<body <?php body_class(); ?>>
 	<div id="page" class="hfeed">
 		<header id="branding" role="banner">
-				<div id="header-wrapper" class="invisible">
+				<div id="header-wrapper">
 					<hgroup>
 					<div id="site-title"><span><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<img alt="<?php /* bloginfo( 'name' ); */ ?>" src="<?php bloginfo('template_url') ?>/images/logo.png">

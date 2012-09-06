@@ -1,16 +1,3 @@
-function matchurl(que) {
-	$('#menu a').click(function(event) {
-    event.preventDefault();
-    var href = this.href;
-
-    $('#whatever').animate({
-        top: '300px'
-    }, 500,
-    function() {
-        window.location = href;
-    });
-});
-
 function ocultar(que) {
 	$(que).fadeOut(400);
 }
