@@ -18,6 +18,9 @@ get_header(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 					<header class="entry-header">
 						<h1 class="entry-title"><?php the_title(); ?></h1>
+						<?php $utm_subtitle = get_post_meta($post->ID, 'utm_subtitle_info', true); ?>
+						<h2 class="subtitle"><?php echo $utm_subtitle; ?></h2>
+						
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">

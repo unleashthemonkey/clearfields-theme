@@ -301,87 +301,81 @@ function twitpic(){
 	}
 }
 
-<<<<<<< HEAD
-=======
-/* We define two action hooks */
-/* First one to add meta box */
-/* Second one to do something with the data entered */
+/* Fire our meta box setup function on the post editor screen. */
+add_action( 'load-post.php', 'utm_meta_boxes_setup' );
+add_action( 'load-post-new.php', 'utm_meta_boxes_setup' );
 
-	add_action( 'add_meta_boxes', 'subtitle_add_custom_box' );
-	add_action( 'save_post', 'subtitle_save_postdata' );
+/* Meta box setup function. */
+function utm_meta_boxes_setup() {
 
-/* Now we will create a function imdb_add_custom_box we used in the action hook above */
+	/* Add meta boxes on the 'add_meta_boxes' hook. */
+	add_action( 'add_meta_boxes', 'utm_add_post_meta_boxes' );
 
-function subtitle_add_custom_box() {
+	/* Save post meta on the 'save_post' hook. */
+	add_action( 'save_post', 'utm_save_post_subtitle_info', 10, 2 );
+}
 
-// inside the function we create our meta box using add_meta_box function
+/* Create one or more meta boxes to be displayed on the post editor screen. */
+function utm_add_post_meta_boxes() {
 
 	add_meta_box(
-		// an ID for the metabox
-
-		'subtitle_sectionid',
-
-		// title of edit screen visible to user
-		__( 'Subtitle', 'subtitle_textdomain' ),
-
-		// Call Back Function which we will define in next step
-		'subtitle_inner_custom_box',
-
-		// custom post type you can set it to post or any registered custom post type
-		'page' ,
-
-		// Show in side you can set it to advanced or normal
-		'normal',
-
-		// priority level if you set it to high this box will be first in the side panels
-		'high'
+		'utm-subtitle-info',			// Unique ID
+		esc_html__( 'Subtitle', 'utm-by-clearfields' ),		// Title
+		'utm_subtitle_info_meta_box',		// Callback function
+		'page',					// Admin page (or post type)
+		'normal',					// Context
+		'high'					// Priority
 	);
 }
 
-function subtitle_inner_custom_box( $post ) {
+/* Display the post meta box. */
+function utm_subtitle_info_meta_box( $object, $box ) { ?>
 
-	// Use nonce for verification
-	wp_nonce_field( plugin_basename( __FILE__ ), 'subtitle_noncename' );
+	<?php wp_nonce_field( basename( __FILE__ ), 'utm_subtitle_info_nonce' ); ?>
 
-	// The actual fields for data entry
-	echo '<label for="subtitle_new_field">';
- _e("Subtitle", 'subtitle_textdomain' );
- echo '</label> ';
+	<p>
+		<label for="utm-subtitle-info"><?php _e( "Add a subtitle to the post.", 'utm-by-clearfields' ); ?></label>
+		<br />
+		<input class="widefat" type="text" name="utm-subtitle-info" id="utm-subtitle-info" value="<?php echo esc_attr( get_post_meta( $object->ID, 'utm_subtitle_info', true ) ); ?>" size="30" />
+	</p>
+<?php }
 
-	echo '<input id="subtitle_new_field" type="text" name="subtitle_new_field" value="" size="40" />';
+/* Save the meta box's post metadata. */
+function utm_save_post_subtitle_info( $post_id, $post ) {
+
+	/* Verify the nonce before proceeding. */
+	if ( !isset( $_POST['utm_subtitle_info_nonce'] ) || !wp_verify_nonce( $_POST['utm_subtitle_info_nonce'], basename( __FILE__ ) ) )
+		return $post_id;
+
+	/* Get the post type object. */
+	$post_type = get_post_type_object( $post->post_type );
+
+	/* Check if the current user has permission to edit the post. */
+	if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
+		return $post_id;
+
+	/* Get the posted data and sanitize it for use as an HTML class. */
+	$new_meta_value = ( isset( $_POST['utm-subtitle-info'] ) ? sanitize_html_class( $_POST['utm-subtitle-info'] ) : '' );
+
+	/* Get the meta key. */
+	$meta_key = 'utm_subtitle_info';
+
+	/* Get the meta value of the custom field key. */
+	$meta_value = get_post_meta( $post_id, $meta_key, true );
+
+	/* If a new meta value was added and there was no previous value, add it. */
+	if ( $new_meta_value && '' == $meta_value )
+		add_post_meta( $post_id, $meta_key, $new_meta_value, true );
+
+	/* If the new meta value does not match the old value, update it. */
+	elseif ( $new_meta_value && $new_meta_value != $meta_value )
+		update_post_meta( $post_id, $meta_key, $new_meta_value );
+
+	/* If there is no new meta value but an old value exists, delete it. */
+	elseif ( '' == $new_meta_value && $meta_value )
+		delete_post_meta( $post_id, $meta_key, $meta_value );
 }
 
-function subtitle_save_postdata( $post_id ) {
-	// verify if this is an auto save routine.
-	// If it is autosave then our form has not been submitted yet, so we dont want to do anything
-
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
-		return;
-  	// verify this came from the our screen and with proper authorization,
-
-	if ( !wp_verify_nonce( $_POST['subtitle_noncename'], plugin_basename( __FILE__ ) ) )
-      		return;
-
-	// Check user permissions
-
-	if ( 'page' == $_POST['post_type'] )
-  		{
-	if ( !current_user_can( 'edit_page', $post_id ) )
-        		return;
-  		}
- 	else
-  	{
- 	if ( !current_user_can( 'edit_post', $post_id ) )
-        		return;
-  	}
-	// OK, we're authenticated: we need to find and save the data
-
-	$mydata = $_POST['subtitle_new_field'];
-
-add_post_meta($post_id, imdburl_new_field, $mydata, true);
-}
-
->>>>>>> parent of e9e0b90... added custom subtitle box, will change!!
 ?>
 <?php // asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
 //	 change the UA-XXXXX-X to be your site's ID
