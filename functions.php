@@ -293,6 +293,7 @@ if (!current_user_can('manage_options')) {
 	add_action('admin_head', 'themename_configure_dashboard_menu'); // Add action to hide admin menu items
 }
 
+//define which icon to use for twitter
 function twitpic(){
 	if ( is_front_page() ) {
 		echo "twit.png";
@@ -375,6 +376,8 @@ function utm_save_post_subtitle_info( $post_id, $post ) {
 	elseif ( '' == $new_meta_value && $meta_value )
 		delete_post_meta( $post_id, $meta_key, $meta_value );
 }
+
+
 
 ?>
 <?php // asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
