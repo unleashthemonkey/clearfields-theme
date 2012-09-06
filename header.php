@@ -63,7 +63,7 @@
 	<body <?php body_class(); ?>>
 	<div id="page" class="hfeed">
 		<header id="branding" role="banner">
-				<div id="header-wrapper">
+				<div id="header-wrapper" class="invisible">
 					<hgroup>
 					<div id="site-title"><span><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<img alt="<?php /* bloginfo( 'name' ); */ ?>" src="<?php bloginfo('template_url') ?>/images/logo.png">
@@ -77,7 +77,7 @@
 				</div>
 	
 				<div class="centerwrapper">
-				<nav id="access" role="article">
+				<nav id="access" class="invisible" role="article">
 					<?php is_subpage(); ?> <!-- Adds menu title and byline -->
 					<div class="skip-link visuallyhidden"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'themename' ); ?>"><?php _e( 'Skip to content', 'themename' ); ?></a></div>
 					<?php 

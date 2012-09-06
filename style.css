@@ -280,6 +280,9 @@ header {
 	display: block;
 	width: 100%;
 }
+.page-template-bureau-php #slidecaption{
+	visibility: hidden;
+}
 
 /* Increase the size of the content area for templates without sidebars */
 .full-width #content,
@@ -359,6 +362,7 @@ header {
 	box-shadow: 2px 3px 4px rgba(0,0,0,0.3);
 	-moz-box-shadow: 2px 3px 4px rgba(0,0,0,0.3);
 	-webkit-box-shadow: 2px 3px 4px rgba(0,0,0,0.3);
+	z-index: 9999;
 }
 #access ul {
 	list-style: none;
