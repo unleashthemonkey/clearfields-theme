@@ -7,6 +7,7 @@
 /*
 Template Name: bureau
 */
+	wp_enqueue_script( 'page_animations', get_template_directory_uri() . '/js/page_animations.js', array( 'jquery' ), '2012-08-13' );
 
 get_header(); ?>
 

@@ -377,8 +377,6 @@ function utm_save_post_subtitle_info( $post_id, $post ) {
 		delete_post_meta( $post_id, $meta_key, $meta_value );
 }
 
-
-
 ?>
 <?php // asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
 //	 change the UA-XXXXX-X to be your site's ID
