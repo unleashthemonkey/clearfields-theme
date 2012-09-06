@@ -301,6 +301,87 @@ function twitpic(){
 	}
 }
 
+<<<<<<< HEAD
+=======
+/* We define two action hooks */
+/* First one to add meta box */
+/* Second one to do something with the data entered */
+
+	add_action( 'add_meta_boxes', 'subtitle_add_custom_box' );
+	add_action( 'save_post', 'subtitle_save_postdata' );
+
+/* Now we will create a function imdb_add_custom_box we used in the action hook above */
+
+function subtitle_add_custom_box() {
+
+// inside the function we create our meta box using add_meta_box function
+
+	add_meta_box(
+		// an ID for the metabox
+
+		'subtitle_sectionid',
+
+		// title of edit screen visible to user
+		__( 'Subtitle', 'subtitle_textdomain' ),
+
+		// Call Back Function which we will define in next step
+		'subtitle_inner_custom_box',
+
+		// custom post type you can set it to post or any registered custom post type
+		'page' ,
+
+		// Show in side you can set it to advanced or normal
+		'normal',
+
+		// priority level if you set it to high this box will be first in the side panels
+		'high'
+	);
+}
+
+function subtitle_inner_custom_box( $post ) {
+
+	// Use nonce for verification
+	wp_nonce_field( plugin_basename( __FILE__ ), 'subtitle_noncename' );
+
+	// The actual fields for data entry
+	echo '<label for="subtitle_new_field">';
+ _e("Subtitle", 'subtitle_textdomain' );
+ echo '</label> ';
+
+	echo '<input id="subtitle_new_field" type="text" name="subtitle_new_field" value="" size="40" />';
+}
+
+function subtitle_save_postdata( $post_id ) {
+	// verify if this is an auto save routine.
+	// If it is autosave then our form has not been submitted yet, so we dont want to do anything
+
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+		return;
+  	// verify this came from the our screen and with proper authorization,
+
+	if ( !wp_verify_nonce( $_POST['subtitle_noncename'], plugin_basename( __FILE__ ) ) )
+      		return;
+
+	// Check user permissions
+
+	if ( 'page' == $_POST['post_type'] )
+  		{
+	if ( !current_user_can( 'edit_page', $post_id ) )
+        		return;
+  		}
+ 	else
+  	{
+ 	if ( !current_user_can( 'edit_post', $post_id ) )
+        		return;
+  	}
+	// OK, we're authenticated: we need to find and save the data
+
+	$mydata = $_POST['subtitle_new_field'];
+
+add_post_meta($post_id, imdburl_new_field, $mydata, true);
+}
+
+>>>>>>> parent of e9e0b90... added custom subtitle box, will change!!
 ?>
 <?php // asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
 //	 change the UA-XXXXX-X to be your site's ID
