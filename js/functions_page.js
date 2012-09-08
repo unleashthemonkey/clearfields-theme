@@ -18,25 +18,27 @@ function loadanimation(){
 }
 
 
-function goto(url){
-  if(isIE){
-    var referLink = document.createElement('a');
-    referLink.href = url;
-    document.body.appendChild(referLink);
-    referLink.click();    
-  }
-  else{
-      location.href = url;
-  }
-}
-
-
 function exitanimation(){
-$('#access a').click(function(event) {
+$('a').click(function(event) {
     event.preventDefault();
     var linkurl = this.href;
+    var linkurlarray = linkurl.split("/");
+    var thisurl=document.URL;
+	var thisurlarray=thisurl.split("/");
+	
+	if (linkurlarray[3]==thisurlarray[3]){
+		if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)){
+	            var referLink = document.createElement('a');
+	            referLink.href = linkurl;
+	            document.body.appendChild(referLink);
+	            referLink.click();
+		} else {
+	            location.href = linkurl;
+		}
+	} else {
+    hidepage();
     
-    $(this).slideUp(500, function(){
+    $(this).fadeOut(400, function(){
 		if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)){
 	            var referLink = document.createElement('a');
 	            referLink.href = linkurl;
@@ -45,7 +47,8 @@ $('#access a').click(function(event) {
 		} else {
 	            location.href = linkurl;
 		}	    
-    });
+    });	
+	}
     
 });
 }
@@ -62,7 +65,15 @@ function revealpagenow()
 function revealpage()
 {
 	mostrar("#header-wrapper");
-	mostrar("#access");
-	mostrar("#colophon");
-	mostrar("#content");
+	mostrar("#access",1000,500);
+	mostrar("#colophon",1000,500);
+	mostrar("#content",1000,500);
+}
+
+function hidepage()
+{
+	ocultar("#header-wrapper");
+	ocultar("#access");
+	ocultar("#colophon");
+	ocultar("#content");
 }

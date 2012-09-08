@@ -224,17 +224,23 @@ header {
 	top: 15px;
 	right: 0;
 	display: inline;
-	color: #ffffff;
+	color: #000000;
 	font-size: 11px;
 	width: 245px;
+}
+#home .utility {
+	color: #ffffff;
 }
 .utility > * {
 	float: left;
 }
 .utility a{
-	color: #ffffff;
+	color: #000000;
 	text-decoration: none;
 	font-weight: bold;
+}
+#home .utility a{
+	color: #ffffff;
 }
 #login{
 	margin: 2px 0 0;
@@ -247,9 +253,12 @@ header {
 	background-color: transparent;
 	text-decoration: none;
 	border: none;
-	color: #ffffff;
+	color: #000000;
 	cursor: pointer;
 	font-weight: bold;
+}
+#home #searchsubmit {
+	color: #ffffff;
 }
 #twithome{
 	margin-left: 10px;
