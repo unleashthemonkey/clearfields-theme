@@ -19,7 +19,7 @@ function loadanimation(){
 
 
 function exitanimation(){
-$('a').click(function(event) {
+$('a :not(load-item)').click(function(event) {
     event.preventDefault();
     var linkurl = this.href;
     var linkurlarray = linkurl.split("/");
