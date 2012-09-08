@@ -72,10 +72,10 @@
 					</hgroup>
 					
 				<div class="utility">
-					<nav id="utility" role="article">
-						<?php /* wp_nav_menu( array( 'theme_location' => 'utility' ) ); */ ?>
-					</nav><!-- #utility -->
 					<?php include (TEMPLATEPATH . '/searchform.php'); ?>
+					<nav id="utility" role="article">
+						<?php wp_nav_menu( array( 'theme_location' => 'utility' ) ); ?>
+					</nav><!-- #utility -->
 					</div>
 				</div>
 	

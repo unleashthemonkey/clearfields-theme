@@ -1,6 +1,7 @@
 jQuery(document).ready(function ($) {
 	loadanimation();
 	exitanimation();
+	togglesitemap();
 });
 
 function loadanimation(){
@@ -19,7 +20,7 @@ function loadanimation(){
 
 
 function exitanimation(){
-$('a').click(function(event) {
+$("a:not(a.load-item,a#toggle-sitemap-link)").click(function(event) {
     event.preventDefault();
     var linkurl = this.href;
     var linkurlarray = linkurl.split("/");
@@ -53,9 +54,16 @@ $('a').click(function(event) {
 });
 }
 
+function togglesitemap(){
+	$("a#toggle-sitemap-link").click(function(event) {
+	event.preventDefault();
+	$("#site-generator").slideToggle(300,'easeOutQuad');
+	});
+}
 
 function revealpagenow()
 {
+	mostrarnow("#supersized");
 	mostrarnow("#header-wrapper");
 	mostrarnow("#access");
 	mostrarnow("#colophon");
@@ -64,6 +72,7 @@ function revealpagenow()
 
 function revealpage()
 {
+	mostrar("#supersized",2000,2000);
 	mostrar("#header-wrapper");
 	mostrar("#access",1000,500);
 	mostrar("#colophon",1000,500);

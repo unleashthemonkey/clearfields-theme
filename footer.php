@@ -8,6 +8,9 @@
 	</div><!-- #main  -->
 
 	<footer id="colophon" class="invisible" role="contentinfo">
+			<div id="toggle-sitemap">
+			<a id="toggle-sitemap-link" href="#">sitemap</a>
+			</div>
 			<div id="site-generator">
 				<?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
 			</div>

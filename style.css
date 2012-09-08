@@ -228,6 +228,15 @@ header {
 	font-size: 11px;
 	width: 245px;
 }
+#utility {
+	position: absolute;
+	top: 18px;
+	left: -225px;
+	right: 0;
+	display: inline;
+	color: #000000;
+	width: 470px;
+}
 #home .utility {
 	color: #ffffff;
 }
@@ -342,7 +351,7 @@ header {
 	font-size: 38px;
 	margin: 0;
 	font-style: normal;
-	font-weight: normal;
+/* 	font-weight: normal; */
 }
 .entry-content {
 	margin: 10px 0 0;
@@ -361,6 +370,25 @@ header {
 	background: transparent;
 	position: relative;
 	top: 0;	
+}
+#utility .menu {
+	margin-top: 20px;
+}
+#utility li {
+	display: inline;
+}
+#utility li a{
+	margin: 10px 30px 0 0;
+	font-size: 15px;
+	font-weight: normal;
+	color: #999;
+}
+#utility li a:hover{
+	color: #EF4135;
+}
+#utility li.current-menu-item a{
+	font-weight: bold;
+	color: #EF4135;
 }
 #access {
 	background: #fff;
@@ -470,8 +498,8 @@ header {
 #site-generator .menu > li {
 	display: block;
 	float: left;
-	margin: 0 20px 0 0;
-	width: 20%;
+	margin: 0;
+	width: 100px;
 }
 #site-generator .menu > li > a{
 	font-weight: bold;
@@ -499,7 +527,7 @@ header {
 	font-family: helvetica, arial, sans-serif;
 	position: relative;
 	top: 0;
-	box-shadow: 0 0 0 rgba(0,0,0,0);
+	box-shadow: 0px 0px 0px rgba(0,0,0,0);
 	-moz-box-shadow: 0 0 0 rgba(0,0,0,0);
 	-webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
 }
@@ -743,6 +771,11 @@ article.comment {
 	padding: 0 0 0;
 	width: 700px;
 	margin: 0 auto 50px;	
+}
+#toggle-sitemap {
+	margin-left: 140px;
+	background-color: #fff;
+	padding: 0 20px;
 }
 #site-generator{
 	margin-left: 140px;
