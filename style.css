@@ -386,7 +386,7 @@ header {
 #utility li a:hover{
 	color: #EF4135;
 }
-#utility li.current-menu-item a{
+#utility li.current-menu-item a, #utility li.current-page-ancestor a{
 	font-weight: bold;
 	color: #EF4135;
 }

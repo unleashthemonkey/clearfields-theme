@@ -63,7 +63,6 @@ function togglesitemap(){
 
 function revealpagenow()
 {
-	mostrarnow("#supersized");
 	mostrarnow("#header-wrapper");
 	mostrarnow("#access");
 	mostrarnow("#colophon");
@@ -72,11 +71,10 @@ function revealpagenow()
 
 function revealpage()
 {
-	mostrar("#supersized",2000,2000);
-	mostrar("#header-wrapper");
-	mostrar("#access",1000,500);
-	mostrar("#colophon",1000,500);
-	mostrar("#content",1000,500);
+	mostrar("#header-wrapper",500,1200);
+	mostrar("#access",1000,800);
+	mostrar("#colophon",1000,800);
+	mostrar("#content",1000,800);
 }
 
 function hidepage()
