@@ -71,13 +71,13 @@ h1,h2,h3,h4,h5,h6 { font-weight: bold; }
 html { overflow-y: scroll; }
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
 a:hover, a:active { outline: none; }
-a, a:active, a:visited { color: #607890; }
+a, a:active, a:visited { color: #444444; }
 a:hover { color: #036; }
 ul, ol { margin-left: 1.8em; }
 ol { list-style-type: decimal; }
 /* Remove margins for navigation lists */
 nav ul, nav li { margin: 0; } 
-small { font-size: 85%; }
+small { font-size: 90%; }
 strong, th { font-weight: bold; }
 td, td img { vertical-align: top; } 
 sub { vertical-align: sub; font-size: smaller; }
@@ -289,6 +289,7 @@ header {
 	display: block;
 	width: 100%;
 }
+
 .page-template-bureau-php #slidecaption{
 	visibility: hidden;
 }
@@ -451,6 +452,32 @@ header {
 */
 #access li.current_page_item a {
 	color: #000;
+}
+#site-generator .menu {
+	display: inline;
+}
+#site-generator a {
+	display: block;
+	margin: 5px 0 0 0;
+	text-decoration: none;
+}
+#site-generator a:hover {
+	text-decoration: underline;
+}
+#site-generator .sub-menu {
+	margin: 0;
+}
+#site-generator .menu > li {
+	display: block;
+	float: left;
+	margin: 0 20px 0 0;
+	width: 20%;
+}
+#site-generator .menu > li > a{
+	font-weight: bold;
+}
+#site-generator ul.menu ul li{
+	display: block;
 }
 
 
@@ -721,6 +748,14 @@ article.comment {
 	margin-left: 140px;
 	background-color: #fff;
 	padding: 20px;
+	overflow: hidden;
+	zoom: 1;
+	list-style: none;
+	font-size: 12px;
+	box-shadow: 2px 3px 4px rgba(0,0,0,0.4);
+	-moz-box-shadow: 2px 3px 4px rgba(0,0,0,0.4);
+	-webkit-box-shadow: 2px 3px 4px rgba(0,0,0,0.4);
+	border-top: 5px solid #EF4135;
 }
 #home #colophon {
 	margin-bottom: 20px;
@@ -731,6 +766,14 @@ article.comment {
 }
 #home #site-generator{
 	background: transparent;
+	margin-left: 140px;
+	box-shadow: 0px 0px 0px rgba(0,0,0,0);
+	-moz-box-shadow: 0px 0px 0px rgba(0,0,0,0);
+	-webkit-box-shadow: 0px 0px 0px rgba(0,0,0,0);
+	border-top: 0;
+}
+#colophon small{
+	margin-left: 160px;
 }
 #home #site-generator small{
 	margin-right: 20px;
