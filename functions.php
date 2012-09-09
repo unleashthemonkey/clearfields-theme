@@ -292,7 +292,6 @@ if (!current_user_can('manage_options')) {
 	add_action('wp_dashboard_setup', 'remove_dashboard_widgets'); // Add action to hide dashboard widgets
 	add_action('admin_head', 'themename_configure_dashboard_menu'); // Add action to hide admin menu items
 }
-
 //define which icon to use for twitter
 function twitpic(){
 	if ( is_front_page() ) {
