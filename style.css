@@ -492,19 +492,19 @@ header {
 #site-generator a:hover {
 	text-decoration: underline;
 }
-#site-generator .sub-menu {
+#site-generator ul li ul {
 	margin: 0;
 }
-#site-generator .menu > li {
+#site-generator > div > ul > li {
 	display: block;
 	float: left;
 	margin: 0;
 	width: 100px;
 }
-#site-generator .menu > li > a{
+#site-generator > div > ul > li > a{
 	font-weight: bold;
 }
-#site-generator ul.menu ul li{
+#site-generator ul ul li{
 	display: block;
 }
 
