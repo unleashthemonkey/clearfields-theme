@@ -71,7 +71,7 @@ function revealpagenow()
 
 function revealpage()
 {
-	mostrar("#header-wrapper",500,1200);
+	mostrar("#header-wrapper",500,800);
 	mostrar("#access",1000,800);
 	mostrar("#colophon",1000,800);
 	mostrar("#content",1000,800);
