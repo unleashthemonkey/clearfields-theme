@@ -10,7 +10,7 @@ function loadanimation(){
 	var thisurl=document.URL;
 	var thisurlarray=thisurl.split("/");
 	
-	if (referurlarray[3]==thisurlarray[3]){
+	if (referurlarray[5]==thisurlarray[5]){
 		revealpagenow();
 	}
 	else{
@@ -27,7 +27,7 @@ $("a:not(a.load-item,a#toggle-sitemap-link)").click(function(event) {
     var thisurl=document.URL;
 	var thisurlarray=thisurl.split("/");
 	
-	if (linkurlarray[3]==thisurlarray[3]){
+	if (linkurlarray[5]==thisurlarray[5]){
 		if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)){
 	            var referLink = document.createElement('a');
 	            referLink.href = linkurl;
