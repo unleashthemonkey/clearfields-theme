@@ -333,10 +333,12 @@ header {
 .widget a:hover{
 	color: #EF4135;
 }
-.bookshelf {
+.bookshelf, .news {
     clear: both;
     margin-bottom: 20px;
     overflow: hidden;
+    border-bottom: 1px solid #444;
+    padding-bottom: 20px;
 }
 .bookshelf .library-background {
     background: url("images/shelf_bg.jpg") no-repeat scroll 0 0 #FFFFFF;
