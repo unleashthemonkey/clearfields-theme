@@ -80,7 +80,7 @@
 				</div>
 	
 				<div class="centerwrapper">
-				<?php if ( !is_page_template('prikbord.php') ) { ?>
+				<?php if ( !is_page_template('prikbord.php')&!is_single()) { ?>
 				<nav id="access" class="invisible" role="article">
 					<?php is_subpage(); ?> <!-- Adds menu title and byline -->
 					<div class="skip-link visuallyhidden"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'themename' ); ?>"><?php _e( 'Skip to content', 'themename' ); ?></a></div>
@@ -98,5 +98,8 @@
 	
 		<div id="contentwrapper">
 		<div id="main"  class="invisible clearfix
-			<?php if ( is_page_template('bureau.php') ) {echo"bureau";} ?>
+			<?php
+				if ( is_page_template('bureau.php') ) {echo"bureau";}
+				if ( is_single() ) {echo"single";}
+			?>
 		">

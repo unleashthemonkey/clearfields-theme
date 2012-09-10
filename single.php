@@ -4,6 +4,9 @@
  * @subpackage handcrafted
  */
 
+	wp_enqueue_script( 'page_animations', get_template_directory_uri() . '/js/page_animations.js', array( 'jquery' ), '2012-08-13' );
+		wp_enqueue_script( 'functions_page', get_template_directory_uri() . '/js/functions_page.js', array( 'jquery' ), '2012-08-13' );
+
 get_header(); ?>
 
 		<div id="primary">
@@ -35,12 +38,12 @@ get_header(); ?>
 						</div><!-- .entry-meta -->
 					</header><!-- .entry-header -->
 
-					<div class="entry-content">
+					<div class="entry-content clearfix">
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'themename' ), 'after' => '</div>' ) ); ?>
 					</div><!-- .entry-content -->
 
-					<footer class="entry-meta">
+					<footer>
 						<?php
 							$tag_list = get_the_tag_list( '', ', ' );
 							if ( '' != $tag_list ) {

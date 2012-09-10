@@ -294,8 +294,8 @@ header {
 #content {
 
 }
-#primary.prikbord {
-	margin: 0;
+.single #primary, #primary.prikbord {
+	margin: 20px 0 0;
 	float: left;
 	width: 530px;
 	padding: 13px 37px 15px 47px;
@@ -689,6 +689,9 @@ background: #E4402F url(images/icon-cogdot.png) no-repeat scroll left center;
 }
 #home #access ul ul li.star a {
 background: #E4402F url(images/icon-star.png) no-repeat scroll left center;
+}
+#home #access ul ul li.photo a {
+background: #E4402F url(images/icon-photo.png) no-repeat scroll left center;
 }
 #home #access li:hover > a{
 	background-color: transparent;
