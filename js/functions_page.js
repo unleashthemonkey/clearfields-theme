@@ -66,7 +66,7 @@ function revealpagenow()
 	mostrarnow("#header-wrapper");
 	mostrarnow("#access");
 	mostrarnow("#colophon");
-	mostrarnow("#content");
+	mostrarnow("#main");
 }
 
 function revealpage()
@@ -74,7 +74,7 @@ function revealpage()
 	mostrar("#header-wrapper",500,800);
 	mostrar("#access",1000,800);
 	mostrar("#colophon",1000,800);
-	mostrar("#content",1000,800);
+	mostrar("#main",1000,800);
 }
 
 function hidepage()
@@ -82,5 +82,5 @@ function hidepage()
 	ocultar("#header-wrapper");
 	ocultar("#access");
 	ocultar("#colophon");
-	ocultar("#content");
+	ocultar("#main");
 }

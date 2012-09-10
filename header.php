@@ -80,6 +80,7 @@
 				</div>
 	
 				<div class="centerwrapper">
+				<?php if ( !is_page_template('prikbord.php') ) { ?>
 				<nav id="access" class="invisible" role="article">
 					<?php is_subpage(); ?> <!-- Adds menu title and byline -->
 					<div class="skip-link visuallyhidden"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'themename' ); ?>"><?php _e( 'Skip to content', 'themename' ); ?></a></div>
@@ -89,10 +90,13 @@
 					} else {
 						wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Returns false when 'about.php' is not being used.
 					}
+					}
 					?>
 				</nav><!-- #access -->
 				</div>
 		</header><!-- #branding -->
 	
-	
-		<div id="main">
+		<div id="contentwrapper">
+		<div id="main"  class="invisible clearfix
+			<?php if ( is_page_template('bureau.php') ) {echo"bureau";} ?>
+		">

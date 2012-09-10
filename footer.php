@@ -6,8 +6,11 @@
 ?>
 
 	</div><!-- #main  -->
+	</div><!-- #wrapper -->
 
-	<footer id="colophon" class="invisible" role="contentinfo">
+	<footer id="colophon" class="invisible
+				<?php if ( is_page_template('bureau.php') ) {echo"bureau";} ?>
+			" role="contentinfo">
 			<div id="toggle-sitemap">
 			<a id="toggle-sitemap-link" href="#">sitemap</a>
 			</div>

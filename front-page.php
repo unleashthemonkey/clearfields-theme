@@ -9,10 +9,5 @@
 
 <?php get_header('front-page'); ?>
 
-		<div id="primary" class="full-width">
-			<div id="content">
-
-			</div><!-- #content -->
-		</div><!-- #primary -->
 
 <?php get_footer('front-page'); ?>

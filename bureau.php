@@ -13,7 +13,7 @@ Template Name: bureau
 get_header(); ?>
 
 		<div id="primary">
-			<div id="content" class="invisible">
+			<div id="content">
 
 				<?php the_post(); ?>
 

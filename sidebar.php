@@ -7,10 +7,6 @@
 		<div id="secondary" class="widget-area">
 			<?php if ( ! dynamic_sidebar( 'sidebar' ) ) : ?>
 
-				<aside id="search" class="widget widget_search" role="complementary">
-					<?php get_search_form(); ?>
-				</aside>
-
 				<aside id="archives" class="widget" role="complementary">
 					<h2 class="widget-title"><?php _e( 'Archives', 'themename' ); ?></h2>
 					<ul>

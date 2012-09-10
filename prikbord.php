@@ -11,9 +11,8 @@ Template Name: prikbord
 		wp_enqueue_script( 'functions_page', get_template_directory_uri() . '/js/functions_page.js', array( 'jquery' ), '2012-08-13' );
 
 get_header(); ?>
-
-		<div id="primary">
-			<div id="content" class="invisible">
+		<div id="primary" class="prikbord">
+			<div id="content">
 
 				<?php the_post(); ?>
 
@@ -40,5 +39,5 @@ get_header(); ?>
 			</div><!-- #content -->
 		</div><!-- #primary -->
 
-<?php /* get_sidebar(); */ ?>
+<?php  get_sidebar();  ?>
 <?php  get_footer();  ?>

@@ -272,26 +272,90 @@ header {
 #twithome{
 	margin-left: 10px;
 }
-#primary {
+#contentwrapper {
 	margin: 0 auto;
-	width: 700px;
+	width: 776px;
 }
-#content {
-	margin: 80px 0 0 140px;
-	padding: 50px 60px 75px 68px;
-	background-color: #fff;
-	min-height: 300px;
+#main {
+	background-color: #ffffff;
 	box-shadow: 2px 3px 4px rgba(0,0,0,0.4);
 	-moz-box-shadow: 2px 3px 4px rgba(0,0,0,0.4);
 	-webkit-box-shadow: 2px 3px 4px rgba(0,0,0,0.4);
+}
+#main.bureau {
+	margin: 80px 38px 0 178px;
+}
+#primary {
+	padding: 50px 60px 75px 68px;
+	background-color: #fff;
+	min-height: 300px;
+
+}
+#content {
+
+}
+#primary.prikbord {
+	margin: 0;
+	float: left;
+	width: 530px;
+	padding: 13px 37px 15px 47px;
+}
+.prikbord h2 {
+	color: #EF4135;
+	font-family: georgia;
+	font-size: 26px;
+	font-style: italic;
+	font-weight: normal;
+	margin-bottom: 5px;
 }
 #home #content{
 	visibility: hidden;
 }
 #main .widget-area {
-	float: right;
+	float: left;
 	overflow: hidden;
-	width: 220px;
+	width: 155px;
+	padding: 50px 0 75px 0;
+	
+}
+.bookshelf {
+    clear: both;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.bookshelf .library-background {
+    background: url("images/shelf_bg.jpg") no-repeat scroll 0 0 #FFFFFF;
+}
+.bookshelf img {
+	margin-left: 7px;
+	box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.4);
+	-moz-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.4);
+	-webkit-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.4);
+}
+.bookshelf .library-background ul{
+	clear: both;
+    list-style: none outside none;
+    margin: auto auto 20px;
+    overflow: hidden;
+    padding-left: 22px;
+    width: 530px;
+}
+.bookshelf .library-background ul li{
+	float: left;
+    margin-right: 20px;
+    padding-top: 9px;
+    text-align: left !important;
+    width: 110px;
+    font-size: 12px;
+}
+.bookshelf .library-background ul li.last{
+	margin-right: 0;
+}
+.bookshelf h4 {
+	margin-top: 20px;
+}
+.bookshelf p {
+	margin-top: 5px;
 }
 #colophon {
 	clear: both;
@@ -769,16 +833,17 @@ article.comment {
  */
 #colophon {
 	padding: 0 0 0;
-	width: 700px;
+	width: 776px;
 	margin: 0 auto 50px;	
 }
 #toggle-sitemap {
-	margin-left: 140px;
 	background-color: #fff;
 	padding: 0 20px;
 }
+.bureau #toggle-sitemap {
+	margin: 0 38px 0 178px;
+}
 #site-generator{
-	margin-left: 140px;
 	background-color: #fff;
 	padding: 20px;
 	overflow: hidden;
@@ -789,6 +854,9 @@ article.comment {
 	-moz-box-shadow: 2px 3px 4px rgba(0,0,0,0.4);
 	-webkit-box-shadow: 2px 3px 4px rgba(0,0,0,0.4);
 	border-top: 5px solid #EF4135;
+}
+.bureau #site-generator{
+	margin: 0 38px 0 178px;
 }
 #home #colophon {
 	margin-bottom: 20px;

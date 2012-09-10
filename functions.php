@@ -89,6 +89,11 @@ add_action('admin_init','customize_meta_boxes');
 
 add_post_type_support( 'page', 'excerpt' );
 
+function custom_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
 
 /**
  * This theme uses wp_nav_menus() for the header menu, utility menu and footer menu.
