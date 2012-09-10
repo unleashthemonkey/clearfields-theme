@@ -318,6 +318,21 @@ header {
 	padding: 50px 0 75px 0;
 	
 }
+.widget ul{
+	clear: both;
+    list-style: none outside none;
+    margin: auto auto 2px;
+    overflow: hidden;
+}
+.widget span{
+	border: 0;
+}
+.widget a{
+	text-decoration: none;
+}
+.widget a:hover{
+	color: #EF4135;
+}
 .bookshelf {
     clear: both;
     margin-bottom: 20px;

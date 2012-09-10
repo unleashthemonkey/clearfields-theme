@@ -236,7 +236,7 @@ add_filter('admin_bar_menu', 'admin_bar_replace_howdy', 25);
 /**
  * This enables post formats. If you use this, make sure to delete any that you aren't going to use.
  */
-//add_theme_support( 'post-formats', array( 'aside', 'audio', 'image', 'video', 'gallery', 'chat', 'link', 'quote', 'status' ) );
+add_theme_support( 'post-formats', array( 'video', 'gallery', 'link') );
 
 /**
  * Register widgetized area and update sidebar with default widgets

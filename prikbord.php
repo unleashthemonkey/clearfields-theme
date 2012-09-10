@@ -28,7 +28,13 @@ get_header(); ?>
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'themename' ), 'after' => '</div>' ) ); ?>
 						<div class="post">
+							<?php include(get_template_directory()."/inc/latestnews.php") ?>
+						</div>
+						<div class="post">
 							<?php include(get_template_directory()."/inc/bookshelf.php") ?>
+						</div>
+						<div class="post">
+							<?php include(get_template_directory()."/inc/latestvideos.php") ?>
 						</div>
 						<?php edit_post_link( __( 'Edit', 'themename' ), '<span class="edit-link">', '</span>' ); ?>
 					</div><!-- .entry-content -->

@@ -25,3 +25,16 @@ function mostrarslide(que,delay,tiempo) {
 function mostrarnow(que){
 	$(que).removeClass("invisible").show();
 }
+
+function loadTweets() 
+{
+	$("#tweets").getTwitter({
+		userName: "clearfields",
+		numTweets: 10,
+		loaderText: "Loading tweets...",
+		slideIn: true,
+		showHeading: false,
+		headingText: "",
+		showProfileLink: false
+	});
+}
