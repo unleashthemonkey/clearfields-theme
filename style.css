@@ -773,6 +773,31 @@ background: #E4402F url(images/icon-photo.png) no-repeat scroll left center;
 .entry-content h2{
 	margin-top: 16px;
 }
+.klant {
+  	margin: 40px 0 0;
+}
+.klant-thumb {
+	float: left;
+	margin: 24px 0 0;
+	width: 132px;
+}
+.klant-content{
+	width: 270px;
+	float: right;
+	padding-left: 20px;
+}
+.klant-content a {
+	background: url("images/link_line.png") repeat-x scroll 0 9px transparent;
+	text-decoration: none;
+	color: #EF4135;
+	font-size: 16px;
+	line-height: 16px;
+	padding-bottom: 8px;
+	display: inline;
+}
+.klant-content p {
+margin-top: 7px;
+}
 
 /*
  *
