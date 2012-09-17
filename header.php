@@ -85,7 +85,7 @@
 					<?php is_subpage(); ?> <!-- Adds menu title and byline -->
 					<div class="skip-link visuallyhidden"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'themename' ); ?>"><?php _e( 'Skip to content', 'themename' ); ?></a></div>
 					<?php 
-					if ( is_page_template('bureau.php')|is_page_template('klanten.php') ) {
+					if ( is_page_template('bureau.php')|is_page_template('klanten.php')|is_page_template('ditzijnwij.php') ) {
 						wp_nav_menu( array( 'theme_location' => 'bureau' ) );	// Returns true when 'about.php' is being used.
 					} else {
 						wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Returns false when 'about.php' is not being used.
@@ -99,7 +99,7 @@
 		<div id="contentwrapper">
 		<div id="main"  class="invisible clearfix
 			<?php
-				if ( is_page_template('bureau.php')|is_page_template('klanten.php') ) {echo"bureau";}
+				if ( is_page_template('bureau.php')|is_page_template('klanten.php')|is_page_template('ditzijnwij.php') ) {echo"bureau";}
 				if ( is_single() ) {echo"single";}
 			?>
 		">

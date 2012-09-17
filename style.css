@@ -773,6 +773,13 @@ background: #E4402F url(images/icon-photo.png) no-repeat scroll left center;
 .entry-content h2{
 	margin-top: 16px;
 }
+
+/*
+ *
+ * Klanten
+ *
+ */
+ 
 .klant {
   	margin: 40px 0 0;
 }
@@ -797,6 +804,91 @@ background: #E4402F url(images/icon-photo.png) no-repeat scroll left center;
 }
 .klant-content p {
 margin-top: 7px;
+}
+
+/*
+ *
+ * Profileslider
+ *
+ */
+
+#slider-gallery{
+	/* CSS3 Box Shadow */
+	-moz-box-shadow:0 0 3px #AAAAAA;
+	-webkit-box-shadow:0 0 3px #AAAAAA;
+	box-shadow:0 0 3px #AAAAAA;
+
+	border:1px solid black;
+
+	background-color: #ff0000;
+
+	/* The width of the gallery */
+	width:430px;
+	overflow:hidden;
+}
+
+#slider-gallery #slides{
+	/* This is the slide area */
+	height:260px;
+
+	/* jQuery changes the width later on to the sum of the widths of all the slides. */
+	width:430px;
+	overflow:hidden;
+}
+
+#slider-gallery .slide{
+	float:left;
+	height: 260px;
+	width: 430px;
+}
+
+#slider-gallery{
+	/* This is the container for the thumbnails */
+}
+
+#slider-gallery ul{
+	margin:0px;
+	padding:0px;
+}
+
+#slider-gallery li{
+	/* Every thumbnail is a li element */
+	width:70px;
+	display:block;
+	float: left;
+	list-style:none;
+	height:45px;
+	overflow:hidden;
+	margin: 0 20px 0 0;
+}
+#slider-gallery li.last-item{
+	margin-right: 0;
+}
+
+#slider-gallery li.inact:hover{
+	/* The inactive state, highlighted on mouse over */
+	background-color: yellow;
+}
+
+#slider-gallery li.act,li.act:hover{
+	/* The active state of the thumb */
+	background-color: green;
+}
+
+#slider-gallery li.act a{
+	cursor:default;
+}
+
+#slider-gallery li a{
+	display:block;
+	background-color: purple;
+	height:50px;
+	padding:10px 0 0;
+	margin: 0;
+}
+
+#slider-gallery a img{
+	border:none;
 }
 
 /*
