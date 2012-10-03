@@ -22,6 +22,7 @@
 
 	<div id="htmlcaption<?php echo($slideCount); $slideCount++;?>" class="nivo-html-caption">		
         <?php the_content(); ?>
+        <h6><?php the_title(); ?></h6>
     </div>
     
    <?php endwhile; ?>

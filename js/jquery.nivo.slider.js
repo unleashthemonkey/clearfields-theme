@@ -95,12 +95,16 @@
         // Process caption function
         var processCaption = function(settings){
             var nivoCaption = $('.nivo-caption', slider);
+            var captionParagraph = $('.nivo-caption p');
+            var captionSigned = $('.nivo-caption h6');
             if(vars.currentImage.attr('title') != '' && vars.currentImage.attr('title') != undefined){
                 var title = vars.currentImage.attr('title');
                 if(title.substr(0,1) == '#') title = $(title).html();   
 
                 if(nivoCaption.css('display') == 'block'){
-                	nivoCaption.stop().fadeOut(200);
+                	nivoCaption.stop().fadeOut(300);
+                	captionParagraph.stop().animate({marginLeft:'15px'},{queue: false, duration: 300});
+                	captionSigned.stop().animate({marginRight:'15px'},{queue: false, duration: 300});
                     setTimeout(function(){
                         nivoCaption.html(title);
                         nivoCaption.stop().fadeIn(settings.captionSpeed);
@@ -110,7 +114,7 @@
                     nivoCaption.stop().delay(settings.captionDelay).fadeIn(settings.captionSpeed);
                 }
             } else {
-                nivoCaption.stop().fadeOut(200);
+                nivoCaption.stop().fadeOut(300);
             }
         }
         
