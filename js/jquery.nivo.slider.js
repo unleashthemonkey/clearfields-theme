@@ -150,11 +150,12 @@
             for(var i = 0; i < kids.length; i++){
                 if(settings.controlNavThumbs){
                     vars.controlNavEl.addClass('nivo-thumbs-enabled');
+                    vars.controlNavEl.addClass('clearfix');
                     var child = kids.eq(i);
                     if(!child.is('img')){
                         child = child.find('img:first');
                     }
-                    if(child.attr('data-thumb')) vars.controlNavEl.append('<a class="nivo-control" rel="'+ i +'"><img src="'+ child.attr('data-thumb') +'" alt="" /></a>');
+                    if(child.attr('data-thumb')) vars.controlNavEl.append('<div class="thumb-'+ i +'"><a class="nivo-control" rel="'+ i +'"><img src="'+ child.attr('data-thumb') +'" alt="'+ child.attr('alt') +'" /><h5>'+ child.attr('alt') +'</h5><h6>'+ child.attr('job-title') +'</h6></a></div>');
                 } else {
                     vars.controlNavEl.append('<a class="nivo-control" rel="'+ i +'">'+ (i + 1) +'</a>');
                 }

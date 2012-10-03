@@ -1,3 +1,3 @@
-jQuery(window).load(function ($) {
+jQuery(document).ready(function ($) {
 	$('#slider').nivoSlider();
 });

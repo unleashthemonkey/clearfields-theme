@@ -9,7 +9,8 @@
         <img src="<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); $thumburl = $thumb['0']; echo($thumburl); ?>"
 			data-thumb="<?php echo(types_render_field("profile-thumb-cf", array("raw"=>"true"))); ?>"
 			alt="<?php the_title(); ?>"
-			title="#htmlcaption<?php echo($slideCount); $slideCount++;?>" />
+			title="#htmlcaption<?php echo($slideCount); $slideCount++;?>"
+			job-title="<?php echo(types_render_field("job-title", array("raw"=>"true"))); ?>" />
 		<?php endwhile; ?>
 	<?php } ?>
 	
