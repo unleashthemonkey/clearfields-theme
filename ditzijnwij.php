@@ -9,7 +9,8 @@ Template Name: ditzijnwij
 */
 	wp_enqueue_script( 'page_animations', get_template_directory_uri() . '/js/page_animations.js', array( 'jquery' ), '2012-08-13' );
 		wp_enqueue_script( 'functions_page', get_template_directory_uri() . '/js/functions_page.js', array( 'jquery' ), '2012-08-13' );
-		wp_enqueue_script( 'profileslider', get_template_directory_uri() . '/js/profileslider.js', array( 'jquery' ), null);
+		wp_enqueue_script( 'nivo_slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array( 'jquery' ), null);
+		wp_enqueue_script( 'ditzijnwij', get_template_directory_uri() . '/js/ditzijnwij.js', array( 'nivo_slider' ), null);
 
 get_header(); ?>
 
@@ -29,7 +30,7 @@ get_header(); ?>
 					<div class="entry-content">
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'themename' ), 'after' => '</div>' ) ); ?>
-						<?php include(get_template_directory()."/inc/profileslider.php") ?>
+						<?php include(get_template_directory()."/inc/nivo_slider.php") ?>
 						<?php edit_post_link( __( 'Edit', 'themename' ), '<span class="edit-link">', '</span>' ); ?>
 
 					</div><!-- .entry-content -->
