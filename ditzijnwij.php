@@ -9,7 +9,7 @@ Template Name: ditzijnwij
 */
 	wp_enqueue_script( 'page_animations', get_template_directory_uri() . '/js/page_animations.js', array( 'jquery' ), '2012-08-13' );
 		wp_enqueue_script( 'functions_page', get_template_directory_uri() . '/js/functions_page.js', array( 'jquery' ), '2012-08-13' );
-		wp_enqueue_script( 'profileslider', get_template_directory_uri() . '/js/profileslider.js', array( 'jquery' ), '2012-09-17' );
+		wp_enqueue_script( 'profileslider', get_template_directory_uri() . '/js/profileslider.js', array( 'jquery' ), null);
 
 get_header(); ?>
 

@@ -49,6 +49,11 @@
 	
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); echo '?' . filemtime( get_stylesheet_directory() . '/style.css'); ?>" type="text/css" media="screen, projection" />
+    <?php
+if(is_page_template('ditzijnwij.php')){?>
+   <link href="<?php echo get_stylesheet_directory_uri() ?>/css/ditzijnwij.css" rel="stylesheet" type="text/css" />';
+<?php }
+?>
 
 	<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
