@@ -84,7 +84,7 @@ if(is_page_template('ditzijnwij.php')){?>
 					</div>
 				</div>
 	
-				<div class="centerwrapper">
+				<div class="centerwrapper<?php if ( is_page_template('ditzijnwij.php')) {echo" ditzijnwij";} ?>">
 				<?php if ( !is_page_template('prikbord.php')&!is_single()) { ?>
 				<nav id="access" class="invisible" role="article">
 					<?php is_subpage(); ?> <!-- Adds menu title and byline -->
@@ -105,6 +105,7 @@ if(is_page_template('ditzijnwij.php')){?>
 		<div id="main"  class="invisible clearfix
 			<?php
 				if ( is_page_template('bureau.php')|is_page_template('klanten.php')|is_page_template('ditzijnwij.php') ) {echo"bureau";}
+				if ( is_page_template('ditzijnwij.php') ) {echo" ditzijnwij";}
 				if ( is_single() ) {echo"single";}
 			?>
 		">

@@ -201,6 +201,9 @@ body.home{
  */
 #page {
 	display: block;
+	position: absolute;
+	top: 0;
+	width: 100%;
 }
 #header-wrapper {
 	background-color: #fff;
@@ -285,6 +288,9 @@ header {
 #main.bureau {
 	margin: 80px 38px 0 178px;
 }
+#main.ditzijnwij {
+	margin: 80px 38px 0 178px;
+}
 #primary {
 	padding: 50px 60px 75px 68px;
 	background-color: #fff;
@@ -299,6 +305,11 @@ header {
 	float: left;
 	width: 530px;
 	padding: 13px 37px 15px 47px;
+}
+#primary.ditzijnwij {
+	float: left;
+	width: 280px;
+	padding-right: 25px;
 }
 .prikbord h2 {
 	color: #EF4135;
@@ -317,6 +328,9 @@ header {
 	width: 155px;
 	padding: 50px 0 75px 0;
 	
+}
+#main .widget-area.ditzijnwij {
+	padding-top: 107px;
 }
 .widget ul{
 	clear: both;
@@ -481,7 +495,7 @@ header {
 	box-shadow: 2px 3px 4px rgba(0,0,0,0.3);
 	-moz-box-shadow: 2px 3px 4px rgba(0,0,0,0.3);
 	-webkit-box-shadow: 2px 3px 4px rgba(0,0,0,0.3);
-	z-index: 9999;
+	z-index: 9000;
 }
 #access ul {
 	list-style: none;

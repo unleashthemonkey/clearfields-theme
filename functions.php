@@ -250,6 +250,14 @@ function handcraftedwp_widgets_init() {
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
 	) );
+	register_sidebar( array (
+		'name' => __( 'Ditzijnwij', 'themename' ),
+		'id' => 'ditzijnwij',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s" role="complementary">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
 }
 add_action( 'init', 'handcraftedwp_widgets_init' );
 
