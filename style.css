@@ -279,6 +279,9 @@ header {
 	margin: 0 auto;
 	width: 776px;
 }
+#contentwrapper.portfolio {
+	width: 954px;
+}
 #main {
 	background-color: #ffffff;
 	box-shadow: 2px 3px 4px rgba(0,0,0,0.4);
@@ -291,11 +294,16 @@ header {
 #main.ditzijnwij {
 	margin: 80px 38px 0 178px;
 }
+#main.portfolio {
+	margin: 80px 0 0 140px;
+}
 #primary {
 	padding: 50px 60px 75px 68px;
 	background-color: #fff;
 	min-height: 300px;
 
+}
+#primary.portfolio {
 }
 #content {
 
@@ -465,6 +473,9 @@ header {
 	background: transparent;
 	position: relative;
 	top: 0;	
+}
+#branding .centerwrapper.portfolio{
+	width: 954px;
 }
 #utility .menu {
 	margin-top: 20px;
@@ -822,112 +833,41 @@ margin-top: 7px;
 
 /*
  *
- * Profileslider
+ * portfolio
  *
  */
-
-#slider-gallery{
-	/* The width of the gallery */
-	width:430px;
-	overflow:hidden;
-}
-
-#slider-gallery #slides{
-	/* This is the slide area */
-	height:260px;
-
-	/* jQuery changes the width later on to the sum of the widths of all the slides. */
-	width:430px;
-	overflow:hidden;
-}
-
-#slider-gallery .slide{
-	float:left;
-	height: 260px;
-	width: 430px;
+ 
+.portfolio-item {
+	background-color: #E6E7E9;
+	height: 244px;
+	padding: 10px;
+	width: 186px;
+	box-shadow: 2px 3px 4px rgba(0,0,0,0.3);
+	-moz-box-shadow: 2px 3px 4px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 2px 3px 4px rgba(0,0,0,0.3);
 	position: relative;
-}
-
-#slider-gallery{
-	/* This is the container for the thumbnails */
-}
-
-#slider-gallery ul{
-	margin:0px;
-	padding:0px;
-}
-
-#slider-gallery li{
-	/* Every thumbnail is a li element */
-	width:100px;
-	display:block;
 	float: left;
-	list-style:none;
-	overflow:hidden;
-	margin: 0 10px 10px 0;
-}
-#slider-gallery li.last-item{
-	margin-right: 0;
+	margin-right: 34px;
 }
 
-#slider-gallery li.inact:hover a img{
-	/* The inactive state, highlighted on mouse over */
-	opacity:1;
-	filter:alpha(opacity=100); /* For IE8 and earlier */
-}
-
-#slider-gallery li.act a img,li.act:hover a img{
-	opacity:1;
-	filter:alpha(opacity=100); /* For IE8 and earlier */
-}
-
-#slider-gallery li.act a{
-	cursor:default;
-}
-
-#slider-gallery li a{
-	display:block;
+.portfolio-item a {
 	text-decoration: none;
-	padding:0;
-	margin: 0;
 }
-#slider-gallery li a img{
-	display: block;
-	opacity:0.7;
-	filter:alpha(opacity=70); /* For IE8 and earlier */
-}
-#slider-gallery li a h5, #slider-gallery li a h6{
-	font-size: 12px;
-	font-weight: normal
-}
-#slider-gallery li a h5{
-	color: #EF4135;
-	font-size: 13px;
-}
-#slider-gallery a img{
-	border:none;
-	width: 100px;
-	height: 110px;
-}
-#slider-gallery .profile-quote{
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 210px;
-	margin: 160px 10px 0 0;
-}
-#slider-gallery .profile-quote p{
-	color: #ffffff;
-	font-size: 14px;
+.portfolio-item h5 {
+	margin: 25px 6px 0;
+	font-size: 16px;
 	font-weight: normal;
-	display: none;
 }
-#slider-gallery .namecaption{
+.portfolio-item p {
+	margin: 2px 6px 0;
+}
+.portfolio-item .ster{
+	width: 46px;
+	height: 39px;
+	background-image: url("images/portfolio-ster.png");
 	position: absolute;
-	bottom: 0;
-}
-#slider-gallery .slide h5{
-	color: #ffffff;
+	bottom: -19px;
+	right: -21px;
 }
 
 /*
@@ -1012,12 +952,12 @@ article.comment {
 	width: 776px;
 	margin: 0 auto 50px;	
 }
-#toggle-sitemap {
-	background-color: #fff;
-	padding: 0 20px;
+#colophon.portfolio {
+	width: 954px;
 }
-.bureau #toggle-sitemap {
-	margin: 0 38px 0 178px;
+#toggle-sitemap {
+	background: url("images/triangle_down.png") no-repeat scroll left center transparent;
+	padding: 0 20px;
 }
 #site-generator{
 	background-color: #fff;
@@ -1031,8 +971,11 @@ article.comment {
 	-webkit-box-shadow: 2px 3px 4px rgba(0,0,0,0.4);
 	border-top: 5px solid #EF4135;
 }
-.bureau #site-generator{
+.bureau #site-generator, .bureau #toggle-sitemap{
 	margin: 0 38px 0 178px;
+}
+.portfolio #site-generator, .portfolio #toggle-sitemap{
+	margin: 0 0 0 140px;
 }
 #home #colophon {
 	margin-bottom: 20px;

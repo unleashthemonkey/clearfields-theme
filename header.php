@@ -84,7 +84,7 @@ if(is_page_template('ditzijnwij.php')){?>
 					</div>
 				</div>
 	
-				<div class="centerwrapper<?php if ( is_page_template('ditzijnwij.php')) {echo" ditzijnwij";} ?>">
+				<div class="centerwrapper<?php if ( is_page_template('ditzijnwij.php')) {echo" ditzijnwij";} if ( is_page_template('portfolio.php')) {echo" portfolio";} ?>">
 				<?php if ( !is_page_template('prikbord.php')&!is_single()) { ?>
 				<nav id="access" class="invisible" role="article">
 					<?php is_subpage(); ?> <!-- Adds menu title and byline -->
@@ -92,6 +92,8 @@ if(is_page_template('ditzijnwij.php')){?>
 					<?php 
 					if ( is_page_template('bureau.php')|is_page_template('klanten.php')|is_page_template('ditzijnwij.php') ) {
 						wp_nav_menu( array( 'theme_location' => 'bureau' ) );	// Returns true when 'about.php' is being used.
+					} elseif ( is_page_template('portfolio.php')|is_page_template('portfolioitem.php') ) {
+						wp_nav_menu( array( 'theme_location' => 'portfolio' ) );
 					} else {
 						wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Returns false when 'about.php' is not being used.
 					}
@@ -101,11 +103,12 @@ if(is_page_template('ditzijnwij.php')){?>
 				</div>
 		</header><!-- #branding -->
 	
-		<div id="contentwrapper">
+		<div id="contentwrapper" class="<?php if ( is_page_template('portfolio.php')) {echo" portfolio";}?>">
 		<div id="main"  class="invisible clearfix
 			<?php
 				if ( is_page_template('bureau.php')|is_page_template('klanten.php')|is_page_template('ditzijnwij.php') ) {echo"bureau";}
 				if ( is_page_template('ditzijnwij.php') ) {echo" ditzijnwij";}
+				if ( is_page_template('portfolio.php') ) {echo" portfolio";}
 				if ( is_single() ) {echo"single";}
 			?>
 		">

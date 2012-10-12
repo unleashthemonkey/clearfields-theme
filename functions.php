@@ -103,7 +103,8 @@ register_nav_menus( array(
 	'primary' => __( 'Primary Menu', 'themename' ),
 	'footer' => __( 'Footer Menu', 'themename' ),
 	'utility' => __( 'Utility Menu', 'themename' ),
-	'bureau' => __( 'bureau menu', 'themename' )
+	'bureau' => __( 'Bureau menu', 'themename' ),
+	'portfolio' => __( 'Portfolio menu', 'themename' )
 ) );
 
 
