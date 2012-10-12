@@ -956,8 +956,14 @@ article.comment {
 	width: 954px;
 }
 #toggle-sitemap {
-	background: url("images/triangle_down.png") no-repeat scroll left center transparent;
-	padding: 0 20px;
+	background-image: url("images/triangle_down.png");
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-position: 10px 3px;
+	padding: 0 25px;
+}
+#toggle-sitemap.closed {
+	background-image: url("images/triangle_right.png");
 }
 #site-generator{
 	background-color: #fff;
