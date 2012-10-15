@@ -454,11 +454,3 @@ function cpt_icons() {
         }
     </style>
 <?php }*/ ?>
-
-<?php function range_hide_follower_count( $attributes ) {
-	if ( ! empty( $attributes['class'] ) && 'twitter-follow-button' == $attributes['class'] )
-		$attributes['data-show-count'] = 'false';
-
-	return $attributes;
-}
-add_filter( 'widget_twitter_link_attributes', 'range_hide_follower_count' ); ?>
