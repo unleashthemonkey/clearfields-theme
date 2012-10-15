@@ -312,7 +312,7 @@ header {
 	margin: 20px 0 0;
 	float: left;
 	width: 530px;
-	padding: 13px 37px 15px 47px;
+	padding: 13px 27px 15px 47px;
 }
 #primary.ditzijnwij {
 	float: left;
@@ -334,8 +334,11 @@ header {
 	float: left;
 	overflow: hidden;
 	width: 155px;
-	padding: 50px 0 75px 0;
-	
+	padding: 32px 0 75px 0;
+	font-size: 12px;	
+}
+#c.count-o{
+	visibility: hidden;
 }
 #main .widget-area.ditzijnwij {
 	padding-top: 107px;
@@ -343,8 +346,43 @@ header {
 .widget ul{
 	clear: both;
     list-style: none outside none;
-    margin: auto auto 2px;
+    margin: auto auto 0;
     overflow: hidden;
+}
+.widget {
+	border-bottom: solid 1px #999999;
+}
+.widget-area h4 {
+	font-size: 15px;
+}
+.widget_twitter li {
+	margin-bottom: 10px;
+}
+.widget_twitter a{
+    font-weight: normal;
+    color: #EF4135;
+}
+.widget_twitter .entry-content {
+	font-weight: bold;
+}
+.widget_twitter .entry-meta a {
+	display: block;
+    color: #666666;
+}
+.widget_links {
+	margin: 20px 0 0 0;
+}
+.widget_links a{
+	color: #EF4135;
+}
+.widget_links a:hover{
+	color: #444444;
+}
+.widget_links ul.blogroll{
+	margin: 0 0 10px 0;
+}
+.flickr-gallery{
+	padding: 0 0 10px 0;
 }
 .widget span{
 	border: 0;
@@ -354,6 +392,10 @@ header {
 }
 .widget a:hover{
 	color: #EF4135;
+}
+.widget-title {
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 .bookshelf, .news {
     clear: both;
@@ -837,14 +879,18 @@ margin-top: 7px;
  *
  */
  
+.portfolio-overzicht {
+	margin-top: 20px;
+}
+ 
 .portfolio-item {
 	background-color: #E6E7E9;
 	height: 244px;
 	padding: 10px;
 	width: 186px;
-	box-shadow: 2px 3px 4px rgba(0,0,0,0.3);
-	-moz-box-shadow: 2px 3px 4px rgba(0,0,0,0.3);
-	-webkit-box-shadow: 2px 3px 4px rgba(0,0,0,0.3);
+	box-shadow: 2px 3px 4px rgba(0,0,0,0.5);
+	-moz-box-shadow: 2px 3px 4px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 2px 3px 4px rgba(0,0,0,0.5);
 	position: relative;
 	float: left;
 	margin-right: 34px;
