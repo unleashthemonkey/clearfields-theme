@@ -369,7 +369,7 @@ header {
 	display: block;
     color: #666666;
 }
-.widget_links {
+.widget_links, .widget_flickr_photos {
 	margin: 20px 0 0 0;
 }
 .widget_links a{
