@@ -94,6 +94,8 @@ if(is_page_template('ditzijnwij.php')){?>
 						wp_nav_menu( array( 'theme_location' => 'bureau' ) );	// Returns true when 'about.php' is being used.
 					} elseif ( is_page_template('portfolio.php')|is_page_template('portfolioitem.php') ) {
 						wp_nav_menu( array( 'theme_location' => 'portfolio' ) );
+					} elseif ( is_page_template('contact.php') ) {
+						wp_nav_menu( array( 'theme_location' => 'contact' ) );
 					} else {
 						wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Returns false when 'about.php' is not being used.
 					}
@@ -106,7 +108,7 @@ if(is_page_template('ditzijnwij.php')){?>
 		<div id="contentwrapper" class="<?php if ( is_page_template('portfolio.php')) {echo" portfolio";}?>">
 		<div id="main"  class="invisible clearfix
 			<?php
-				if ( is_page_template('bureau.php')|is_page_template('klanten.php')|is_page_template('ditzijnwij.php') ) {echo"bureau";}
+				if ( is_page_template('bureau.php')|is_page_template('klanten.php')|is_page_template('ditzijnwij.php')||is_page_template('contact.php') ) {echo"bureau";}
 				if ( is_page_template('ditzijnwij.php') ) {echo" ditzijnwij";}
 				if ( is_page_template('portfolio.php') ) {echo" portfolio";}
 				if ( is_single() ) {echo"single";}

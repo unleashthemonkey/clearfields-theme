@@ -352,6 +352,9 @@ header {
 .widget {
 	border-bottom: solid 1px #999999;
 }
+.widget.widget_flickr_photos {
+	border-bottom: none;
+}
 .widget-area h4 {
 	font-size: 15px;
 }
@@ -403,6 +406,10 @@ header {
     overflow: hidden;
     border-bottom: 1px solid #444;
     padding-bottom: 20px;
+}
+.single .bookshelf {
+	border-bottom: none;
+	margin-top: 20px;
 }
 .bookshelf .library-background {
     background: url("images/shelf_bg.jpg") no-repeat scroll 0 0 #FFFFFF;
@@ -503,7 +510,15 @@ header {
 	border-top: 1px solid #999;
 	padding: 5px 0 0;
 }
-
+.single .entry-content {
+	padding-top: 40px;
+}
+.entry-content a{
+	color: #EF4135;
+}
+.entry-content p{
+	margin-bottom: 1em;
+}
 /*
  *
  * Menu
@@ -1049,4 +1064,7 @@ article.comment {
 }
 #home #site-generator small{
 	margin-right: 20px;
+}
+.single-books .entry-content img{
+	margin-bottom: 1em;
 }

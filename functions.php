@@ -104,7 +104,8 @@ register_nav_menus( array(
 	'footer' => __( 'Footer Menu', 'themename' ),
 	'utility' => __( 'Utility Menu', 'themename' ),
 	'bureau' => __( 'Bureau menu', 'themename' ),
-	'portfolio' => __( 'Portfolio menu', 'themename' )
+	'portfolio' => __( 'Portfolio menu', 'themename' ),
+	'contact' => __( 'Contact menu', 'themename' )
 ) );
 
 
@@ -389,6 +390,8 @@ function utm_save_post_subtitle_info( $post_id, $post ) {
 	elseif ( '' == $new_meta_value && $meta_value )
 		delete_post_meta( $post_id, $meta_key, $meta_value );
 }
+
+
 
 ?>
 <?php // asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet

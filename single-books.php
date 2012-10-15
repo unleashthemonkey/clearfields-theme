@@ -38,10 +38,12 @@ get_header(); ?>
 					</footer><!-- .entry-meta -->
 				</article><!-- #post-<?php the_ID(); ?> -->
 
+
 				<nav id="nav-below" role="article">
 					<h1 class="section-heading"><?php _e( 'Bekijk ook de andere boeken', 'themename' ); ?></h1>
-					<div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'themename' ) . '</span> %title' ); ?></div>
-					<div class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'themename' ) . '</span>' ); ?></div>
+									<div class="post">
+					<?php include(get_template_directory()."/inc/bookshelf.php") ?>
+				</div>
 				</nav><!-- #nav-below -->
 
 			<?php endwhile; // end of the loop. ?>
