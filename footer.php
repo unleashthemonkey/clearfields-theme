@@ -9,7 +9,7 @@
 	</div><!-- #wrapper -->
 
 	<footer id="colophon" class="invisible
-				<?php if ( is_page_template('bureau.php')|is_page_template('klanten.php')|is_page_template('ditzijnwij.php') ) {echo"bureau";}
+				<?php if ( is_page_template('bureau.php')|is_page_template('klanten.php')|is_page_template('ditzijnwij.php')|is_page_template('contact.php') ) {echo"bureau";}
 				if ( is_page_template('portfolio.php')) {echo"portfolio";} ?>
 			" role="contentinfo">
 			<div id="toggle-sitemap">

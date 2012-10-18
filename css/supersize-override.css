@@ -4,7 +4,7 @@
  *
  */
 
-#slidecaption{
+.home #slidecaption{
 	background: url("../images/star.png") no-repeat scroll left center transparent;
     height: 66px;
     padding-left: 75px;
@@ -21,6 +21,13 @@
     text-shadow: 0px 0px 0px black;
 }
 
-#slidecaption a, a:hover{
+.home #slidecaption a, a:hover{
 	color: #fff;
+}
+
+#controls-wrapper {
+	visibility: hidden;
+}
+.home #controls-wrapper {
+	visibility: visible;
 }

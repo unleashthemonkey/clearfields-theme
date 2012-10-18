@@ -63,6 +63,7 @@ if(is_page_template('ditzijnwij.php')){?>
     <![endif]-->
 	
 	<?php wp_head(); ?>
+	<link rel="stylesheet" href="<?php bloginfo('template_url') ?>/css/supersize-override.css" type="text/css" />
 	</head>
 	
 	<body <?php body_class(); ?>>

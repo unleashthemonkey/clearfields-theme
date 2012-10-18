@@ -1,5 +1,5 @@
 <div class="bookshelf">
-<?php if ( !is_single()){ ?>
+<?php if ( !is_single()){ $maxbooks = 4;?>
 <h2><?php _e("Boekenplank"); ?></h2>
 <?php } ?>
 <div class="library-background">
