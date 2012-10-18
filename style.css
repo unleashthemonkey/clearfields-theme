@@ -349,8 +349,16 @@ header {
     margin: auto auto 0;
     overflow: hidden;
 }
-.widget {
+.textwidget {
 	border-bottom: solid 1px #999999;
+	padding-bottom: 5px;
+	color: #EF4135;
+	font-size: 11px;
+	vertical-align: bottom;
+	line-height: 16px;
+}
+.textwidget a{
+	color: #EF4135;
 }
 .widget.widget_flickr_photos {
 	border-bottom: none;
