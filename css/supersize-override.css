@@ -21,7 +21,7 @@
     text-shadow: 0px 0px 0px black;
 }
 
-.home #slidecaption a, a:hover{
+.home #slidecaption a, .home a:hover{
 	color: #fff;
 }
 

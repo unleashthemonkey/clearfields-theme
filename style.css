@@ -1046,6 +1046,9 @@ article.comment {
 #toggle-sitemap.closed {
 	background-image: url("images/triangle_right.png");
 }
+#toggle-sitemap-link a:hover{
+	color: #444;
+}
 #site-generator{
 	background-color: #fff;
 	padding: 20px;

@@ -54,10 +54,18 @@ $("a:not(a.load-item,a#toggle-sitemap-link,#slider-gallery a,a.close,.overlay a,
 });
 }
 
+var toggleCounter = 0;
 function togglesitemap(){
 	$("a#toggle-sitemap-link").click(function(event) {
 	event.preventDefault();
 	$("#site-generator").slideToggle(300,'easeOutQuad');
+	toggleCounter++;
+	if(toggleCounter>1){toggleCounter=0;}
+	if (toggleCounter==1){
+	$("#toggle-sitemap").addClass("closed");
+	} else {
+	$("#toggle-sitemap").removeClass("closed");
+	}
 	});
 }
 
