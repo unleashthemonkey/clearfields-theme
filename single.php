@@ -52,7 +52,6 @@ get_header(); ?>
 				</article><!-- #post-<?php the_ID(); ?> -->
 
 				<nav id="nav-below" role="article">
-					<h1 class="section-heading"><?php _e( 'Meer nieuws', 'themename' ); ?></h1>
 					<div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'themename' ) . '</span>'._x('Vorig bericht:','Previous post text','themename'). ' "%title"',TRUE ); ?></div>
 					<div class="nav-next"><?php next_post_link( '%link', _x('Volgend bericht:','Next post text','themename').' "%title" <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'themename' ) . '</span>',TRUE ); ?></div>
 				</nav><!-- #nav-below -->

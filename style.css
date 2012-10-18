@@ -845,6 +845,7 @@ background: #E4402F url(images/icon-photo.png) no-repeat scroll left center;
 #nav-below {
 	margin: 2em 0 0;
 	border-top: 1px solid #999999;
+	padding: 1em 0 0;
 }
 #nav-below .section-heading {
 	text-align: center;
