@@ -1,5 +1,11 @@
 <div class="thumb-gallery">
-    <?php $profile_query = new WP_Query(array('post_type' => 'profile','profile-category' => 'ditzijnwij','orderby' => 'menu_order', 'order' => 'ASC'));
+    <?php
+    if (is_page('Dit zijn wij')) {
+    $overlay_category = 'ditzijnwij';
+    } elseif (is_page('Alumni')) {
+	$overlay_category = 'alumni';
+    }
+    $profile_query = new WP_Query(array('post_type' => 'profile','profile-category' => $overlay_category,'orderby' => 'menu_order', 'order' => 'ASC'));
 	if ($profile_query->have_posts()) {
 		$slideCount = 1;
 		while ($profile_query->have_posts()) : $profile_query->the_post();?>
