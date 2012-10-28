@@ -312,7 +312,7 @@ header {
 	margin: 20px 0 0;
 	float: left;
 	width: 530px;
-	padding: 13px 27px 15px 47px;
+	padding: 13px 37px 15px 37px;
 }
 #primary.ditzijnwij {
 	float: left;
@@ -419,10 +419,10 @@ header {
 	border-bottom: none;
 	margin-top: 20px;
 }
-.bookshelf .library-background {
+.bookshelf .library-background{
     background: url("images/shelf_bg.jpg") no-repeat scroll 0 0 #FFFFFF;
 }
-.bookshelf .library-background {
+.single .bookshelf .library-background {
     background: url("images/single_shelf_bg.jpg") repeat-y scroll 0 0 #FFFFFF;
 }
 .bookshelf img {
@@ -913,9 +913,9 @@ margin-top: 7px;
  * portfolio
  *
  */
- 
+
 .portfolio-overzicht {
-	margin-top: 20px;
+	margin-top: -20px;
 }
  
 .portfolio-item {
@@ -928,11 +928,19 @@ margin-top: 7px;
 	-webkit-box-shadow: 2px 3px 4px rgba(0,0,0,0.5);
 	position: relative;
 	float: left;
-	margin-right: 34px;
+	margin: 40px 34px 0 0;
+}
+.portfolio-image {
+	height: 132px;
+	width: 186px;
+	background-color: #fff;
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .portfolio-item a {
 	text-decoration: none;
+	margin: auto;
 }
 .portfolio-item h5 {
 	margin: 25px 6px 0;

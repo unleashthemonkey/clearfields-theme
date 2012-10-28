@@ -9,6 +9,7 @@ Template Name: portfolio
 */
 	wp_enqueue_script( 'page_animations', get_template_directory_uri() . '/js/page_animations.js', array( 'jquery' ), '2012-08-13' );
 	wp_enqueue_script( 'functions_page', get_template_directory_uri() . '/js/functions_page.js', array( 'jquery' ), '2012-08-13' );
+	wp_enqueue_script( 'functions_portfolio', get_template_directory_uri() . '/js/functions_portfolio.js', array( 'jquery' ), '2012-08-13' );
 
 get_header(); ?>
 

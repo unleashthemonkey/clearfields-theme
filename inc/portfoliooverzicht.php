@@ -4,10 +4,11 @@
 		while ($portfolio_query->have_posts()) : $portfolio_query->the_post();
 		?>		
 		<div class="portfolio-item">
+			<div class="portfolio-image">
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail( 'portfolio-thumb' ); ?>
 			</a>
-			
+			</div>
 			<a href="<?php the_permalink(); ?>">
 			<h5><?php the_title(); ?></h5>
 			<?php the_excerpt(); ?>

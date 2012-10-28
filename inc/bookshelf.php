@@ -2,7 +2,7 @@
 <?php if ( !is_single()){ $maxbooks = 4;?>
 <h2><?php _e("Boekenplank"); ?></h2>
 <?php } ?>
-<div class="library-background">
+<div class="library-background" >
 	 	
 	<?php
 	if ( is_single()){
