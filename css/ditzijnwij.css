@@ -1,5 +1,9 @@
-.thumb-gallery div{
-	cursor: pointer;
+.thumb-gallery div {
+  cursor: pointer;
+  float: left;
+  margin: 0 20px 0 0;
+  overflow: hidden;
+  width: 130px;
 }
 .thumb-gallery h5 {
 	color: #EF4135;
@@ -34,6 +38,8 @@
 }
 .overlay > p {
 	margin: 75px 10px 0 250px;
+	font-family: Georgia;
+	font-style: italic;
 }
 .overlay > .social {
 	position: absolute;

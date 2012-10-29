@@ -1,4 +1,4 @@
-<div class="thumb-gallery">
+<div class="thumb-gallery clearfix">
     <?php
     if (is_page('Dit zijn wij')) {
     $overlay_category = 'ditzijnwij';
@@ -9,7 +9,7 @@
 	if ($profile_query->have_posts()) {
 		$slideCount = 1;
 		while ($profile_query->have_posts()) : $profile_query->the_post();?>
-        <div id="thumb-<?php echo($slideCount); ?>" rel="#profile-<?php echo($slideCount); $slideCount++;?>">
+        <div id="thumb-<?php echo($slideCount); ?>" class="profile-item" rel="#profile-<?php echo($slideCount); $slideCount++;?>">
         <img
         	src="<?php echo(types_render_field("profile-thumb-cf", array("raw"=>"true"))); ?>"
         	alt="<?php the_title(); ?>"
@@ -27,7 +27,7 @@
 
 	<div id="profile-<?php echo($slideCount); $slideCount++;?>" class="overlay" style="background-image:url(<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); $thumburl = $thumb['0']; echo($thumburl); ?>);">	
     <a class="close"></a>
-    <?php the_content(); ?>
+    <p><?php echo(types_render_field("profile-quote", array("raw"=>"true"))); ?></p>
     <h6><?php the_title(); ?></h6>
     <div class="social">
 	    <p>
