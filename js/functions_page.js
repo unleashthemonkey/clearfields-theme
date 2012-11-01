@@ -20,7 +20,7 @@ function loadanimation(){
 
 
 function exitanimation(){
-$("a:not(a.load-item,a#toggle-sitemap-link,#slider-gallery a,a.close,.overlay a,a[target='_blank'],a.fancybox)").click(function(event) {
+$("a:not(a.load-item,a#toggle-sitemap-link,#slider-gallery a,a.close,.overlay a,a[target='_blank'],.ngg-gallery-thumbnail a)").click(function(event) {
     event.preventDefault();
     var linkurl = this.href;
     var linkurlarray = linkurl.split("/");

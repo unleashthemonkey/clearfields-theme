@@ -29,6 +29,17 @@ get_header(); ?>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content clearfix">
+					<?php
+					$video_type = types_render_field("video-site", array("raw"=>"true"));
+					if ($video_type == 2): ?>
+					
+					<iframe src="http://player.vimeo.com/video/<?php echo(types_render_field("vimeo-id", array("raw"=>"true"))); ?>?title=1&amp;byline=1&amp;portrait=0&amp;badge=0" width="250" height="166" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+					<?php endif;
+					if ($video_type == 3): ?>
+					
+					<iframe width="250" height="166" src="http://www.youtube.com/embed/<?php echo(types_render_field("youtube-id", array("raw"=>"true"))); ?>?rel=0" frameborder="0" allowfullscreen></iframe>
+
+					<?php endif; ?>
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'themename' ), 'after' => '</div>' ) ); ?>
 					</div><!-- .entry-content -->
@@ -42,9 +53,9 @@ get_header(); ?>
 
 				<nav id="nav-below" role="article">
 					<h1 class="section-heading"><?php _e( 'Bekijk ook de andere boeken', 'themename' ); ?></h1>
-									<div class="post">
+					<div class="post">
 					<?php include(get_template_directory()."/inc/videoshelf.php") ?>
-				</div>
+					</div>
 				</nav><!-- #nav-below -->
 
 			<?php endwhile; // end of the loop. ?>

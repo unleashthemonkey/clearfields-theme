@@ -4,10 +4,16 @@
  * @subpackage handcrafted
  */
 
+/*
+Template Name: bureau
+*/
+	wp_enqueue_script( 'page_animations', get_template_directory_uri() . '/js/page_animations.js', array( 'jquery' ), '2012-08-13' );
+		wp_enqueue_script( 'functions_page', get_template_directory_uri() . '/js/functions_page.js', array( 'jquery' ), '2012-08-13' );
+
 get_header(); ?>
 
-		<section id="primary" role="region">
-			<div id="content">
+		<div id="primary">
+			<div id="content bureau">
 
 				<?php the_post(); ?>
 
@@ -30,7 +36,7 @@ get_header(); ?>
 				<?php get_template_part( 'loop', 'archive' ); ?>
 
 			</div><!-- #content -->
-		</section><!-- #primary -->
+		</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php /* get_sidebar(); */ ?>
+<?php  get_footer();  ?>

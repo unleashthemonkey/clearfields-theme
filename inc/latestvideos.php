@@ -1,25 +1,29 @@
-<div class="news">
+<div class="videos">
 <h2><?php _e("Gezien?"); ?></h2>
-<div class="news-background"> 	
+<div class="videos-background"> 	
 	<?php 
-$args = array(
-  'posts_per_page' => 1,
-  'tax_query' => array(
-    array(
-      'taxonomy' => 'post_format',
-      'field' => 'slug',
-      'terms' => 'post-format-video'
-    )
-  )
-);
-		$videos_query = new WP_Query($args);
-	  if ($videos_query->have_posts()) {
-		while ($videos_query->have_posts()) : $videos_query->the_post();?> 
-			<h4><?php the_title(); ?></h4>
-			<?php the_content();?>
-			<!-- <a href="<?php the_permalink(); ?>">lees verder</a> -->
-	    <?php endwhile; ?>
-	</ul>
-	<?php } ?>	
+		$video_query = new WP_Query(array ('post_type' => 'videos','posts_per_page' => 2));
+		if ($video_query->have_posts()){
+			while ($video_query->have_posts()) : $video_query->the_post();
+			$video_type = types_render_field("video-site", array("raw"=>"true"));
+					if ($video_type == 2): ?>
+						<iframe src="http://player.vimeo.com/video/<?php echo(types_render_field("vimeo-id", array("raw"=>"true"))); ?>?title=1&amp;byline=1&amp;portrait=0&amp;badge=0" width="250" height="166" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+					<?php endif;
+					if ($video_type == 3): ?>
+						<iframe width="250" height="166" src="http://www.youtube.com/embed/<?php echo(types_render_field("youtube-id", array("raw"=>"true"))); ?>?rel=0" frameborder="0" allowfullscreen></iframe>
+					<?php endif;
+			endwhile;
+		}
+?>
 	</div>
+				<?php
+			    // Get the ID of a given category
+			    $category_id = get_cat_ID( 'Videos' );
+			
+			    // Get the URL of this category
+			    $category_link = get_category_link( $category_id );
+			?>
+			
+			<!-- Print a link to this category -->
+			<a class="archive-link" href="<?php echo esc_url( $category_link ); ?>" title="Nieuws">video archief</a>
 </div>

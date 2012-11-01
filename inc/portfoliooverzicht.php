@@ -13,7 +13,7 @@
 			<h5><?php the_title(); ?></h5>
 			<?php the_excerpt(); ?>
 			</a>
-			<div class="ster"></div>
+<!-- 			<div class="ster"></div> -->
 		</div>
 	<?php endwhile; ?>
 	<?php } ?>	

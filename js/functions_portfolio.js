@@ -1,5 +1,5 @@
 jQuery(document).ready(function ($) {
-	removeNthMargin(3);
+	removeNthMargin(2);
  
 function removeNthMargin(a)
 {

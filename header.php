@@ -86,7 +86,7 @@ if(is_page_template('ditzijnwij.php')){?>
 				</div>
 	
 				<div class="centerwrapper<?php if ( is_page_template('ditzijnwij.php')) {echo" ditzijnwij";} if ( is_page_template('portfolio.php')) {echo" portfolio";} ?>">
-				<?php if ( !is_page_template('prikbord.php')&!is_single()) { ?>
+				<?php if ( !is_page_template('prikbord.php')&!is_single()&!is_category()) { ?>
 				<nav id="access" class="invisible" role="article">
 					<?php is_subpage(); ?> <!-- Adds menu title and byline -->
 					<div class="skip-link visuallyhidden"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'themename' ); ?>"><?php _e( 'Skip to content', 'themename' ); ?></a></div>

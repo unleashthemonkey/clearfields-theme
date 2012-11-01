@@ -7,6 +7,16 @@
 			<h4><?php the_title(); ?></h4>
 			<?php the_content();?>
 			<a href="<?php the_permalink(); ?>">lees verder</a>
+			<?php
+			    // Get the ID of a given category
+			    $category_id = get_cat_ID( 'Nieuws' );
+			
+			    // Get the URL of this category
+			    $category_link = get_category_link( $category_id );
+			?>
+			
+			<!-- Print a link to this category -->
+			<a class="archive-link" href="<?php echo esc_url( $category_link ); ?>" title="Nieuws">nieuws archief</a>
 	    <?php endwhile; ?>
 	</ul>
 	<?php } ?>	
