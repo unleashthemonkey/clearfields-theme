@@ -391,7 +391,80 @@ function utm_save_post_subtitle_info( $post_id, $post ) {
 		delete_post_meta( $post_id, $meta_key, $meta_value );
 }
 
+/* Fire our meta box setup function on the post editor screen. */
+add_action( 'load-post.php', 'portfolios_meta_boxes_setup' );
+add_action( 'load-post-new.php', 'portfolios_meta_boxes_setup' );
 
+/* Meta box setup function. */
+function portfolios_meta_boxes_setup() {
+
+	/* Add meta boxes on the 'add_meta_boxes' hook. */
+	add_action( 'add_meta_boxes', 'portfolios_add_post_meta_boxes' );
+
+	/* Save post meta on the 'save_post' hook. */
+	add_action( 'save_post', 'portfolios_save_post_participants_info', 10, 2 );
+}
+
+/* Create one or more meta boxes to be displayed on the post editor screen. */
+function portfolios_add_post_meta_boxes() {
+
+	add_meta_box(
+		'portfolios-participants-info',			// Unique ID
+		esc_html__( 'Participants', 'utm-by-clearfields' ),		// Title
+		'portfolios_participants_info_meta_box',		// Callback function
+		'portfolios',					// Admin page (or post type)
+		'normal',					// Context
+		'high'					// Priority
+	);
+}
+
+/* Display the post meta box. */
+function portfolios_participants_info_meta_box( $object, $box ) { ?>
+
+	<?php wp_nonce_field( basename( __FILE__ ), 'portfolios_participants_info_nonce' ); ?>
+
+	<p>
+		<label for="portfolios-participants-info"><?php _e( "Select the colleagues who worked on the project.", 'utm-by-clearfields' ); ?></label>
+		<br />
+		<input class="widefat" type="text" name="portfolios-participants-info" id="portfolios-participants-info" value="<?php echo esc_attr( get_post_meta( $object->ID, 'portfolios_participants_info', true ) ); ?>" size="30" />
+	</p>
+<?php }
+
+/* Save the meta box's post metadata. */
+function portfolios_save_post_participants_info( $post_id, $post ) {
+
+	/* Verify the nonce before proceeding. */
+	if ( !isset( $_POST['portfolios_participants_info_nonce'] ) || !wp_verify_nonce( $_POST['portfolios_participants_info_nonce'], basename( __FILE__ ) ) )
+		return $post_id;
+
+	/* Get the post type object. */
+	$post_type = get_post_type_object( $post->post_type );
+
+	/* Check if the current user has permission to edit the post. */
+	if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
+		return $post_id;
+
+	/* Get the posted data and sanitize it for use as an HTML class. */
+	$new_meta_value = ( isset( $_POST['portfolios-participants-info'] ) ? sanitize_text_field( $_POST['portfolios-participants-info'] ) : '' );
+
+	/* Get the meta key. */
+	$meta_key = 'portfolios_participants_info';
+
+	/* Get the meta value of the custom field key. */
+	$meta_value = get_post_meta( $post_id, $meta_key, true );
+
+	/* If a new meta value was added and there was no previous value, add it. */
+	if ( $new_meta_value && '' == $meta_value )
+		add_post_meta( $post_id, $meta_key, $new_meta_value, true );
+
+	/* If the new meta value does not match the old value, update it. */
+	elseif ( $new_meta_value && $new_meta_value != $meta_value )
+		update_post_meta( $post_id, $meta_key, $new_meta_value );
+
+	/* If there is no new meta value but an old value exists, delete it. */
+	elseif ( '' == $new_meta_value && $meta_value )
+		delete_post_meta( $post_id, $meta_key, $meta_value );
+}
 
 ?>
 <?php // asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
