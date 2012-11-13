@@ -6,10 +6,9 @@
 
 	wp_enqueue_script( 'page_animations', get_template_directory_uri() . '/js/page_animations.js', array( 'jquery' ), '2012-08-13' );
 		wp_enqueue_script( 'functions_page', get_template_directory_uri() . '/js/functions_page.js', array( 'jquery' ), '2012-08-13' );
-		wp_enqueue_script( 'overlay', 'http://cdn.jquerytools.org/1.2.7/all/jquery.tools.min.js', array( 'jquery' ), null);
-		wp_enqueue_script( 'init_overlay', get_template_directory_uri() . '/js/init_overlay.js', array( 'overlay' ), null);
-		wp_enqueue_script( 'functions_ditzijnwij', get_template_directory_uri() . '/js/functions_ditzijnwij.js', array( 'jquery' ), '2012-08-13' );
-
+		
+		
+		
 get_header('portfolios'); ?>
 
 		<div id="primary">
@@ -40,12 +39,14 @@ get_header('portfolios'); ?>
 					  'connected_type' => 'portfolios_to_profile',
 					  'connected_items' => get_queried_object(),
 					  'nopaging' => true,
+					  'orderby' => 'menu_order',
+					  'order' => 'ASC',
 					) );
 					
 					// Display connected pages
 					if ( $connected->have_posts() ) :
 					?>
-					<h3>Related pages:</h3>
+					<h3>Zij werkten er aan mee:</h3>
 					<div class="thumb-gallery clearfix">
 					<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
 				        <div id="thumb-<?php echo($slideCount); ?>" class="profile-item" rel="#profile-<?php echo($slideCount); $slideCount++;?>">
