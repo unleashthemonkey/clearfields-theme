@@ -466,6 +466,17 @@ function portfolios_save_post_participants_info( $post_id, $post ) {
 		delete_post_meta( $post_id, $meta_key, $meta_value );
 }
 
+
+function my_connection_types() {
+	p2p_register_connection_type( array(
+		'name' => 'portfolios_to_profile',
+		'from' => 'portfolios',
+		'to' => 'profile'
+	) );
+}
+add_action( 'p2p_init', 'my_connection_types' );
+
+
 ?>
 <?php // asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
 //	 change the UA-XXXXX-X to be your site's ID
