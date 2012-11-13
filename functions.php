@@ -253,8 +253,8 @@ function handcraftedwp_widgets_init() {
 		'after_title' => '</h4>',
 	) );
 	register_sidebar( array (
-		'name' => __( 'Ditzijnwij', 'themename' ),
-		'id' => 'ditzijnwij',
+		'name' => __( 'Portfolios', 'themename' ),
+		'id' => 'portfolios',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s" role="complementary">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h4 class="widget-title">',
