@@ -45,6 +45,7 @@ get_header('portfolios'); ?>
 					
 					// Display connected pages
 					if ( $connected->have_posts() ) :
+					$slideCount = 1;
 					?>
 					<h3>Zij werkten er aan mee:</h3>
 					<div class="thumb-gallery clearfix">
@@ -60,12 +61,21 @@ get_header('portfolios'); ?>
 					<?php endwhile; ?>
 					</div>
 					
-					<?php if ( $connected->have_posts() ) :
+					
+					<?php 
+					// Prevent weirdness
+					wp_reset_postdata();
+					
+					endif;
 					?>
-					<h3>Zij werkten er aan mee:</h3>
-					<div class="thumb-gallery clearfix">
+					
+					<?php // display overlay items
+					if ( $connected->have_posts() ) :
+					$slideCount = 1;
+					?>
+
 					<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
-					<div id="profile-<?php echo($slideCount); $slideCount++;?>" class="overlay" style="background-image:url(<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); $thumburl = $thumb['0']; echo($thumburl); ?>);">	
+						<div id="profile-<?php echo($slideCount); $slideCount++;?>" class="overlay" style="background-image:url(<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); $thumburl = $thumb['0']; echo($thumburl); ?>);">	
 					    <a class="close"></a>
 					    <?php if (is_page('Dit zijn wij')) : ?>
 					    <a href="<?php echo get_permalink(); ?>">
@@ -85,9 +95,9 @@ get_header('portfolios'); ?>
 						    <a href="<?php echo(types_render_field("profile-linkedin", array("raw"=>"true"))); ?>" target="_blank"><img src="<?php bloginfo('template_url') ?>/images/linkedin.png" width="18" height="18" alt="LinkedIn"/></a>
 						    <p>
 					    </div>
-					</div>
+					    </div>
 					<?php endwhile; ?>
-					</div>
+					
 					
 					<?php 
 					// Prevent weirdness
