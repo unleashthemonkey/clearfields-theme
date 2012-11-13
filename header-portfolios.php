@@ -96,6 +96,6 @@
 		<div id="contentwrapper" class="<?php if ( is_page_template('portfolio.php')) {echo" portfolio";}?>">
 		<div id="main"  class="invisible clearfix
 			<?php
-				echo"bureau";
+				echo"bureau portfolios";
 			?>
 		">

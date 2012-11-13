@@ -5,7 +5,7 @@
  */
 ?>
 		<div id="secondary" class="widget-area">
-			<?php if ( ! dynamic_sidebar( 'sidebar' ) ) : ?>
+			<?php if ( ! dynamic_sidebar( 'portfolios' ) ) : ?>
 
 				<aside id="archives" class="widget" role="complementary">
 					<h2 class="widget-title"><?php _e( 'Archives', 'themename' ); ?></h2>

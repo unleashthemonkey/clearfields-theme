@@ -1179,3 +1179,6 @@ article.comment {
 .cycle-wrap, .flickr-gallery {
 	height: 150px !important;
 }
+#exposeMask, body, html {
+	height: 100% !important;
+}

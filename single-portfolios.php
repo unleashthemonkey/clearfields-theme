@@ -116,5 +116,5 @@ get_header('portfolios'); ?>
 			</div><!-- #content -->
 		</div><!-- #primary -->
 
-<?php /* get_sidebar(); */ ?>
+<?php get_sidebar('portfolios'); ?>
 <?php get_footer(); ?>
