@@ -6,6 +6,9 @@
 
 	wp_enqueue_script( 'page_animations', get_template_directory_uri() . '/js/page_animations.js', array( 'jquery' ), '2012-08-13' );
 		wp_enqueue_script( 'functions_page', get_template_directory_uri() . '/js/functions_page.js', array( 'jquery' ), '2012-08-13' );
+		wp_enqueue_script( 'overlay', 'http://cdn.jquerytools.org/1.2.7/all/jquery.tools.min.js', array( 'jquery' ), null);
+		wp_enqueue_script( 'init_overlay', get_template_directory_uri() . '/js/init_overlay.js', array( 'overlay' ), null);
+		wp_enqueue_script( 'functions_ditzijnwij', get_template_directory_uri() . '/js/functions_ditzijnwij.js', array( 'jquery' ), '2012-08-13' );
 
 get_header('portfolios'); ?>
 
@@ -43,11 +46,18 @@ get_header('portfolios'); ?>
 					if ( $connected->have_posts() ) :
 					?>
 					<h3>Related pages:</h3>
-					<ul>
+					<div class="thumb-gallery clearfix">
 					<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
-						<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+				        <div id="thumb-<?php echo($slideCount); ?>" class="profile-item" rel="#profile-<?php echo($slideCount); $slideCount++;?>">
+				        <img
+				        	src="<?php echo(types_render_field("profile-thumb-cf", array("raw"=>"true"))); ?>"
+				        	alt="<?php the_title(); ?>"
+				        />
+				        <h5><?php the_title(); ?></h5>
+				        <h6><?php echo(types_render_field("job-title", array("raw"=>"true"))); ?></h6>
+				        </div>
 					<?php endwhile; ?>
-					</ul>
+					</div>
 					
 					<?php 
 					// Prevent weirdness
