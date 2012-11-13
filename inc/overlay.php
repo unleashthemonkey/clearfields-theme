@@ -27,12 +27,18 @@
 
 	<div id="profile-<?php echo($slideCount); $slideCount++;?>" class="overlay" style="background-image:url(<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); $thumburl = $thumb['0']; echo($thumburl); ?>);">	
     <a class="close"></a>
+    <?php if (is_page('Dit zijn wij')) : ?>
     <a href="<?php echo get_permalink(); ?>">
     <p><?php echo(types_render_field("profile-quote", array("raw"=>"true"))); ?></p>
     </a>
     <a href="<?php echo get_permalink(); ?>">
     <h6><?php the_title(); ?></h6>
     </a>
+    <?php elseif (is_page('Alumni')): ?>
+    <p><?php echo(types_render_field("profile-quote", array("raw"=>"true"))); ?></p>
+    <h6><?php the_title(); ?><br>
+    <span style="font-weight:normal;"><?php echo(types_render_field("job-title", array("raw"=>"true"))); ?></span></h6>
+    <?php endif; ?>
     <div class="social">
 	    <p>
 	    <a href="<?php echo(types_render_field("profile-twitter", array("raw"=>"true"))); ?>" target="_blank"><img src="<?php bloginfo('template_url') ?>/images/twit.png" width="18" height="18" alt="Twitter"/></a>

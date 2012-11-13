@@ -1,6 +1,6 @@
+history.navigationMode = 'compatible';
 jQuery(document).ready(function ($) {
 	loadanimation();
-	exitanimation();
 	togglesitemap();
 });
 

@@ -7,7 +7,7 @@
 	wp_enqueue_script( 'page_animations', get_template_directory_uri() . '/js/page_animations.js', array( 'jquery' ), '2012-08-13' );
 		wp_enqueue_script( 'functions_page', get_template_directory_uri() . '/js/functions_page.js', array( 'jquery' ), '2012-08-13' );
 
-get_header(); ?>
+get_header('portfolios'); ?>
 
 		<div id="primary">
 			<div id="content">
@@ -49,5 +49,5 @@ get_header(); ?>
 			</div><!-- #content -->
 		</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php /* get_sidebar(); */ ?>
 <?php get_footer(); ?>
