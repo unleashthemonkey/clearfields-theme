@@ -6,7 +6,7 @@
 
 	wp_enqueue_script( 'page_animations', get_template_directory_uri() . '/js/page_animations.js', array( 'jquery' ), '2012-08-13' );
 		wp_enqueue_script( 'functions_page', get_template_directory_uri() . '/js/functions_page.js', array( 'jquery' ), '2012-08-13' );
-		
+				wp_enqueue_script( 'overlay', 'http://cdn.jquerytools.org/1.2.7/all/jquery.tools.min.js', array( 'jquery' ), null);
 		
 		
 get_header('portfolios'); ?>
