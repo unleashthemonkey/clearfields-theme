@@ -30,6 +30,31 @@ get_header('portfolios'); ?>
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'themename' ), 'after' => '</div>' ) ); ?>
 					</div><!-- .entry-content -->
+					
+					<?php
+					// Find connected pages
+					$connected = new WP_Query( array(
+					  'connected_type' => 'portfolios_to_profile',
+					  'connected_items' => get_queried_object(),
+					  'nopaging' => true,
+					) );
+					
+					// Display connected pages
+					if ( $connected->have_posts() ) :
+					?>
+					<h3>Related pages:</h3>
+					<ul>
+					<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
+						<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+					<?php endwhile; ?>
+					</ul>
+					
+					<?php 
+					// Prevent weirdness
+					wp_reset_postdata();
+					
+					endif;
+					?>
 
 					<footer>
 
