@@ -314,7 +314,7 @@ header {
 #content {
 
 }
-.single:not(.single-profile, .single-portfolios) #primary, #primary.prikbord , .archive #primary{
+.single:not(.single-profile):not(.single-portfolios) #primary, #primary.prikbord , .archive #primary{
 	margin: 20px 0 0;
 	float: left;
 	width: 530px;
