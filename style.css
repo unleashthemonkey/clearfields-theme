@@ -293,6 +293,9 @@ header {
 #main.bureau {
 	margin: 80px 38px 0 178px;
 }
+#main.bureau.portfolios {
+	margin-right: -120px;
+}
 #main.ditzijnwij {
 	margin: 80px 38px 0 178px;
 }
@@ -310,6 +313,11 @@ header {
 .single-profile #primary, .single-portfolios #primary{
 	padding-left: 55px;
 	padding-right: 40px;
+}
+.single-portfolios #primary {
+	width: 450px;
+	float: left;
+	padding-right: 30px;
 }
 #content {
 
@@ -344,6 +352,17 @@ header {
 	width: 155px;
 	padding: 32px 0 75px 0;
 	font-size: 12px;	
+}
+.portfolios .widget-area {
+	border-top: solid 1px #999;
+	margin-top: 107px;
+	width: 145px;
+}
+.portfolios aside {
+	margin-bottom: 20px;
+}
+.portfolios aside a {
+	font-size: 12px;
 }
 #c.count-o{
 	visibility: hidden;
@@ -887,8 +906,12 @@ background: #E4402F url(images/icon-disc.png) no-repeat scroll left center;
 	border-top: 1px solid #999999;
 	padding: 1em 0 0;
 }
-#nav-below .section-heading {
+#nav-below .section-heading, #nav-above .section-heading {
 	text-align: center;
+	font-weight: normal;
+	color: #999;
+}
+#nav-below .section-heading{
 	margin: 1em 0 0;
 }
 .page-link {
@@ -1152,6 +1175,10 @@ article.comment {
 .bureau #site-generator, .bureau #toggle-sitemap, .single-profile #site-generator, .single-profile #toggle-sitemap, .single-portfolios #site-generator, .single-portfolios #toggle-sitemap, .portfolio #site-generator, .portfolio #toggle-sitemap{
 	margin: 0 38px 0 178px;
 }
+.single-portfolios #site-generator, .single-portfolios #toggle-sitemap {
+	margin-right: -120px;
+}
+
 #home #colophon {
 	margin-bottom: 20px;
 	position: absolute;

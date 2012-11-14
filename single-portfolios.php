@@ -17,11 +17,13 @@ get_header('portfolios'); ?>
 
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-				<nav id="nav-above" role="article">
-					<h1 class="section-heading"><?php _e( 'Post navigation', 'themename' ); ?></h1>
+				<!--
+<nav id="nav-above" role="article">
+					<h1 class="section-heading"><?php _e( 'Browse door onze projecten', 'themename' ); ?></h1>
 					<div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'themename' ) . '</span> %title' ); ?></div>
 					<div class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'themename' ) . '</span>' ); ?></div>
-				</nav><!-- #nav-above -->
+				</nav>
+--><!-- #nav-above -->
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 					<header class="entry-header">
@@ -106,7 +108,7 @@ get_header('portfolios'); ?>
 				</article><!-- #post-<?php the_ID(); ?> -->
 
 				<nav id="nav-below" role="article">
-					<h1 class="section-heading"><?php _e( 'Post navigation', 'themename' ); ?></h1>
+					<h1 class="section-heading"><?php _e( 'Browse door onze projecten', 'themename' ); ?></h1>
 					<div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'themename' ) . '</span> %title' ); ?></div>
 					<div class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'themename' ) . '</span>' ); ?></div>
 				</nav><!-- #nav-below -->

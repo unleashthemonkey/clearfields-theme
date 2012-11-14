@@ -4,7 +4,7 @@
  * @subpackage handcrafted
  */
 ?>
-		<div id="secondary" class="widget-area">
+		<div id="secondary portfolios" class="widget-area">
 			<?php if ( ! dynamic_sidebar( 'portfolios' ) ) : ?>
 
 				<aside id="archives" class="widget" role="complementary">
