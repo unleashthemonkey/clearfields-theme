@@ -138,7 +138,21 @@ function is_subpage() {
 	    }
         
     } elseif ( is_single() ) {
-    
+    	$connected = new WP_Query( array(
+		  'connected_type' => 'profile_to_page',
+		  'connected_items' => get_queried_object(),
+		  'nopaging' => true,
+		) );
+		if ( $connected->have_posts() ) :
+			while ( $connected->have_posts() ) : $connected->the_post();
+				$parent_page_title = get_the_title();
+		        $permalink = get_permalink();
+	        	echo '<a href="'.$permalink.'"><h1 class="section-heading">'.$parent_page_title.'</h1>';
+	        	the_excerpt();
+	        	echo '</a>';
+			endwhile;
+		wp_reset_postdata();
+		endif;
     
     } else {                                   // there is no parent so ...
         $page_title = get_the_title($post->ID);
@@ -479,6 +493,11 @@ function my_connection_types() {
 	p2p_register_connection_type( array(
 		'name' => 'profile_to_page',
 		'from' => 'profile',
+		'to' => 'page'
+	) );
+		p2p_register_connection_type( array(
+		'name' => 'portfolios_to_page',
+		'from' => 'portfolios',
 		'to' => 'page'
 	) );
 }
