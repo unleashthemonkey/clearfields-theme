@@ -90,25 +90,7 @@ if(is_page_template('ditzijnwij.php')){?>
 				<nav id="access" class="" role="article">
 					<!-- Adds menu title and byline -->
 					<?php 
-					if (!is_single()){
-						is_subpage();
-					} else {
-						$connected = new WP_Query( array(
-						  'connected_type' => 'posts_to_pages',
-						  'connected_items' => get_queried_object(),
-						  'nopaging' => true,
-						) );
-						if ( $connected->have_posts() ) :
-							while ( $connected->have_posts() ) : $connected->the_post();
-								$parent_page_title = get_the_title();
-						        $permalink = get_permalink();
-					        	echo '<a href="'.$permalink.'"><h1 class="section-heading">'.$parent_page_title.'</h1>';
-					        	the_excerpt();
-					        	echo '</a>';
-							endwhile;
-						wp_reset_postdata();
-						endif;
-					}
+					is_subpage();
 					 ?>
 					<div class="skip-link visuallyhidden"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'themename' ); ?>"><?php _e( 'Skip to content', 'themename' ); ?></a></div>
 					<?php 
