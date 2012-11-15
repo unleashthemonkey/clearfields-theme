@@ -1,4 +1,3 @@
-history.navigationMode = 'compatible';
 jQuery(document).ready(function ($) {
 	loadanimation();
 	togglesitemap();
