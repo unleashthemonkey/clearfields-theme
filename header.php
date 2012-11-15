@@ -69,7 +69,7 @@ if(is_page_template('ditzijnwij.php')){?>
 	<body <?php body_class(); ?>>
 	<div id="page" class="hfeed">
 		<header id="branding" role="banner">
-				<div id="header-wrapper" class="invisible">
+				<div id="header-wrapper" class="">
 					<hgroup>
 					<div id="site-title"><span><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<img alt="<?php /* bloginfo( 'name' ); */ ?>" src="<?php bloginfo('template_url') ?>/images/logo.png">
@@ -87,7 +87,7 @@ if(is_page_template('ditzijnwij.php')){?>
 	
 				<div class="centerwrapper<?php if ( is_page_template('ditzijnwij.php')) {echo" ditzijnwij";} if ( is_page_template('portfolio.php')) {echo" portfolio";} ?>">
 				<?php if ( !is_page_template('prikbord.php')&!is_single()&!is_category()) { ?>
-				<nav id="access" class="invisible" role="article">
+				<nav id="access" class="" role="article">
 					<?php is_subpage(); ?> <!-- Adds menu title and byline -->
 					<div class="skip-link visuallyhidden"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'themename' ); ?>"><?php _e( 'Skip to content', 'themename' ); ?></a></div>
 					<?php 
@@ -107,7 +107,7 @@ if(is_page_template('ditzijnwij.php')){?>
 		</header><!-- #branding -->
 	
 		<div id="contentwrapper" class="<?php if ( is_page_template('portfolio.php')) {echo" portfolio";}?>">
-		<div id="main"  class="invisible clearfix
+		<div id="main"  class=" clearfix
 			<?php
 				if ( is_page_template('bureau.php')|is_page_template('klanten.php')|is_page_template('ditzijnwij.php')||is_page_template('contact.php') ) {echo"bureau";}
 				if ( is_page_template('ditzijnwij.php') ) {echo" ditzijnwij";}
