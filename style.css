@@ -303,7 +303,7 @@ header {
 	margin: 80px 38px 0 178px;
 }
 #primary {
-	padding: 50px 60px 75px 68px;
+	padding: 50px 60px 20px 68px;
 	background-color: #fff;
 	min-height: 300px;
 
@@ -1159,6 +1159,13 @@ article.comment {
 	width: 776px;
 	margin: 0 auto 50px;	
 }
+#starline {
+	background-image: url("images/Lijnwebsite.png");
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+  	background-position: 68px 0px;
+	padding: 30px 0px;
+}
 #toggle-sitemap {
 	background-image: url("images/triangle_down.png");
 	background-color: #ffffff;
@@ -1186,10 +1193,21 @@ article.comment {
 	-webkit-box-shadow: 2px 3px 4px rgba(0,0,0,0.4);
 	border-top: 5px solid #EF4135;
 }
-.bureau #site-generator, .bureau #toggle-sitemap, .single-profile #site-generator, .single-profile #toggle-sitemap, .single-portfolios #site-generator, .single-portfolios #toggle-sitemap, .portfolio #site-generator, .portfolio #toggle-sitemap{
+.bureau #site-generator,
+.bureau #toggle-sitemap,
+.bureau #starline,
+.single-profile #site-generator,
+.single-profile #toggle-sitemap,
+.single-profile #starline,
+.single-portfolios #site-generator,
+.single-portfolios #toggle-sitemap,
+.single-portfolios #starline,
+.portfolio #site-generator,
+.portfolio #toggle-sitemap,
+.portfolio #starline{
 	margin: 0 38px 0 178px;
 }
-.single-portfolios #site-generator, .single-portfolios #toggle-sitemap {
+.single-portfolios #site-generator, .single-portfolios #toggle-sitemap, .single-portfolios #starline {
 	margin-right: -120px;
 }
 
