@@ -137,6 +137,9 @@ function is_subpage() {
 	    	echo 'cant load parent data';
 	    }
         
+    } elseif ( is_single() ) {
+    
+    
     } else {                                   // there is no parent so ...
         $page_title = get_the_title($post->ID);
         $page_excerpt = get_the_excerpt($post->ID);
@@ -472,6 +475,11 @@ function my_connection_types() {
 		'name' => 'portfolios_to_profile',
 		'from' => 'portfolios',
 		'to' => 'profile'
+	) );
+	p2p_register_connection_type( array(
+		'name' => 'profile_to_page',
+		'from' => 'profile',
+		'to' => 'page'
 	) );
 }
 add_action( 'p2p_init', 'my_connection_types' );

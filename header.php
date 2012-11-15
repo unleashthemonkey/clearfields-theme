@@ -88,11 +88,32 @@ if(is_page_template('ditzijnwij.php')){?>
 				<div class="centerwrapper<?php if ( is_page_template('ditzijnwij.php')) {echo" ditzijnwij";} if ( is_page_template('portfolio.php')) {echo" portfolio";} ?>">
 				<?php if ( !is_page_template('prikbord.php')&!is_single()&!is_category()) { ?>
 				<nav id="access" class="" role="article">
-					<?php is_subpage(); ?> <!-- Adds menu title and byline -->
+					<!-- Adds menu title and byline -->
+					<?php 
+					if (!is_single()){
+						is_subpage();
+					} else {
+						$connected = new WP_Query( array(
+						  'connected_type' => 'posts_to_pages',
+						  'connected_items' => get_queried_object(),
+						  'nopaging' => true,
+						) );
+						if ( $connected->have_posts() ) :
+							while ( $connected->have_posts() ) : $connected->the_post();
+								$parent_page_title = get_the_title();
+						        $permalink = get_permalink();
+					        	echo '<a href="'.$permalink.'"><h1 class="section-heading">'.$parent_page_title.'</h1>';
+					        	the_excerpt();
+					        	echo '</a>';
+							endwhile;
+						wp_reset_postdata();
+						endif;
+					}
+					 ?>
 					<div class="skip-link visuallyhidden"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'themename' ); ?>"><?php _e( 'Skip to content', 'themename' ); ?></a></div>
 					<?php 
 					if ( is_page_template('bureau.php')|is_page_template('klanten.php')|is_page_template('ditzijnwij.php') ) {
-						wp_nav_menu( array( 'theme_location' => 'bureau' ) );	// Returns true when 'about.php' is being used.
+						wp_nav_menu( array( 'theme_location' => 'bureau' ) );	// Returns true when 'bureau.php' is being used.
 					} elseif ( is_page_template('portfolio.php')|is_page_template('portfolioitem.php') ) {
 						wp_nav_menu( array( 'theme_location' => 'portfolio' ) );
 					} elseif ( is_page_template('contact.php') ) {

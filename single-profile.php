@@ -8,13 +8,14 @@
 
 get_header('profile'); ?>
 
-		<div id="primary">
+		<div id="primary" class="profile">
 			<div id="content">
 
 				<?php the_post(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 					<header class="entry-header">
+						<a class="back-to-thumbs" href="http://www.clearfields.nl/backend/index.php/bureau/dit-zijn-wij/"><p>&lt; terug naar het overzicht</p></a>
 						<h1 class="entry-title"><?php the_title(); ?></h1>
 						<?php $utm_subtitle = get_post_meta($post->ID, 'utm_subtitle_info', true); ?>
 						<h2 class="subtitle"><?php echo $utm_subtitle; ?></h2>

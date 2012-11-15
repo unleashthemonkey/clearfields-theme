@@ -1,7 +1,7 @@
 .thumb-gallery div {
   cursor: pointer;
   float: left;
-  margin: 0 20px 0 0;
+  margin: 0 20px 10px 0;
   overflow: hidden;
   width: 130px;
 }

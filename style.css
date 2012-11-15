@@ -308,8 +308,10 @@ header {
 	min-height: 300px;
 
 }
-#primary.portfolio {
+#primary.profile {
+	padding-top: 26px;
 }
+
 .single-profile #primary, .single-portfolios #primary{
 	padding-left: 55px;
 	padding-right: 40px;
@@ -1011,6 +1013,14 @@ margin-top: 7px;
 
 
 /* profile */
+
+a.back-to-thumbs {
+	color:#999;
+}
+
+.back-to-thumbs > p {
+  margin-bottom: 10px;
+}
 .sinlge-profile-header {
 	position: relative;
 	width:465px;
@@ -1053,6 +1063,8 @@ margin-top: 7px;
 .sinlge-profile-header .social a:hover img {
 	opacity: 1;
 }
+
+
 
 /* videos */
 .single-videos iframe {
