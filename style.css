@@ -546,8 +546,13 @@ header {
 	font-weight: normal;
 	margin: 0 0 1em;
 }
-.entry-header h1, .entry-header a {
+.entry-header h1, .entry-header a{
+  color: #EF4135;
+  margin-bottom: 20px;
+}
+.worked-on-project {
 	color: #EF4135;
+	margin-bottom: 5px;
 }
 .entry-header h1{
 	font-size: 38px;

@@ -50,7 +50,7 @@ get_header('portfolios'); ?>
 					if ( $connected->have_posts() ) :
 					$slideCount = 1;
 					?>
-					<h3>Zij werkten er aan mee:</h3>
+					<h1 class="worked-on-project">Zij werkten er aan mee:</h1>
 					<div class="thumb-gallery clearfix">
 					<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
 				        <div id="thumb-<?php echo($slideCount); ?>" class="profile-item" rel="#profile-<?php echo($slideCount); $slideCount++;?>">
