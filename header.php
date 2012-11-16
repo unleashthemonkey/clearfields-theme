@@ -86,7 +86,7 @@ if(is_page_template('ditzijnwij.php')){?>
 				</div>
 	
 				<div class="centerwrapper<?php if ( is_page_template('ditzijnwij.php')) {echo" ditzijnwij";} if ( is_page_template('portfolio.php')) {echo" portfolio";} ?>">
-				<?php if ( !is_page_template('prikbord.php')&!is_single()&!is_category()) { ?>
+				<?php if ( !is_page_template('prikbord.php')&!is_single()&!is_category()&!is_archive()) { ?>
 				<nav id="access" class="" role="article">
 					<!-- Adds menu title and byline -->
 					<?php 

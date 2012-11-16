@@ -23,14 +23,16 @@ get_header(); ?>
 						<?php elseif ( is_year() ) : ?>
 							<?php printf( __( 'Yearly Archives: <span>%s</span>', 'themename' ), get_the_date( 'Y' ) ); ?>
 						<?php else : ?>
-							<?php _e( 'Blog Archives', 'themename' ); ?>
+							<?php _e( 'Archief: Boeken', 'themename' ); ?>
 						<?php endif; ?>
 					</h1>
 				</header>
-
-				<?php rewind_posts(); ?>
-
-				<?php get_template_part( 'loop', 'archive' ); ?>
+				
+				<nav id="nav-below" role="article">
+				<div class="post">
+					<?php include(get_template_directory()."/inc/bookshelf.php") ?>
+				</div>
+				</nav>
 
 			</div><!-- #content -->
 		</section><!-- #primary -->

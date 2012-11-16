@@ -47,9 +47,11 @@
 		<?php endif; ?>
 
 		<footer class="entry-meta">
+			<?php if ( !is_archive() ) : ?>
 			<span class="cat-links"><span class="entry-utility-prep entry-utility-prep-cat-links"><?php _e( 'Gepost in ', 'themename' ); ?></span><?php the_category( ', ' ); ?></span>
+		<?php endif; ?>
 <!-- 			<span class="meta-sep"> | </span> -->
-			<?php the_tags( '<span class="tag-links">' . __( 'Tagged ', 'themename' ) . '</span>', ', ', '<span class="meta-sep"> | </span>' ); ?>
+			<?php /* the_tags( '<span class="tag-links">' . __( 'Tagged ', 'themename' ) . '</span>', ', ', '<span class="meta-sep"> | </span>' ); */ ?>
 			<!-- <span class="comments-link"> --><?php /* comments_popup_link( __( 'Leave a comment', 'themename' ), __( '1 Comment', 'themename' ), __( '% Comments', 'themename' ) ); */ ?> <!-- </span> --> 
 			<?php edit_post_link( __( 'Edit', 'themename' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
 		</footer><!-- #entry-meta -->
