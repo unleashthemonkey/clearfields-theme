@@ -345,6 +345,11 @@ header {
 	font-weight: normal;
 	margin-bottom: 5px;
 }
+.prikbord h2.subtitle {
+	color: #444444;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 18px;
+}
 #home #content{
 	visibility: hidden;
 }
@@ -859,6 +864,21 @@ background: #E4402F url(images/icon-photo.png) no-repeat scroll left center;
 }
 #home #access ul ul li.disc a {
 background: #E4402F url(images/icon-disc.png) no-repeat scroll left center;
+}
+#home #access ul ul li.phone a {
+background: #E4402F url(images/icon-phone.png) no-repeat scroll left center;
+}
+#home #access ul ul li.marker a {
+background: #E4402F url(images/icon-marker.png) no-repeat scroll left center;
+}
+#home #access ul ul li.location a {
+background: #E4402F url(images/icon-location.png) no-repeat scroll left center;
+}
+#home #access ul ul li.video a {
+background: #E4402F url(images/icon-video.png) no-repeat scroll left center;
+}
+#home #access ul ul li.letter a {
+background: #E4402F url(images/icon-letter.png) no-repeat scroll left center;
 }
 #home #access li:hover > a{
 	background-color: transparent;
