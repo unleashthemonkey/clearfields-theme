@@ -113,7 +113,7 @@ register_nav_menus( array(
  * This function is a conditional used to check if the page is a parent or a child to display the correct info in the main navmenu
  */
 function is_subpage() {
-    global $post;                              // load details about this page
+    global $post;                        // load details about this page
 
     if ( is_page() && $post->post_parent ) {   // test to see if the page has a parent
         
@@ -138,8 +138,9 @@ function is_subpage() {
 	    }
         
     } elseif ( is_single() ) {
+    	$posttypeconnection = get_post_type( $post->ID )."_to_page";
     	$connected = new WP_Query( array(
-		  'connected_type' => 'profile_to_page',
+		  'connected_type' => $posttypeconnection,
 		  'connected_items' => get_queried_object(),
 		  'nopaging' => true,
 		) );
