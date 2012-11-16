@@ -303,7 +303,7 @@ header {
 	margin: 80px 38px 0 178px;
 }
 #primary {
-	padding: 50px 60px 20px 68px;
+	padding: 50px 60px 10px 68px;
 	background-color: #fff;
 	min-height: 300px;
 
@@ -452,16 +452,18 @@ header {
 	margin-top: 20px;
 }
 .bookshelf .library-background{
-    background: url("images/shelf_bg_plain.jpg") no-repeat scroll 0 0 #FFFFFF;
+    background: url("images/shelf_bg_plain.jpg") no-repeat scroll 0 -1px #FFFFFF;
 }
 .single .bookshelf .library-background {
     background: url("images/single_shelf_bg.jpg") repeat-y scroll 0 0 #FFFFFF;
 }
 .bookshelf img {
 	margin-left: 7px;
+/*
 	box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.4);
 	-moz-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.4);
 	-webkit-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.4);
+*/
 }
 .bookshelf .library-background ul{
 	clear: both;
@@ -1159,12 +1161,16 @@ article.comment {
 	width: 776px;
 	margin: 0 auto 50px;	
 }
-#starline {
+.bureau #starline {
 	background-image: url("images/Lijnwebsite.png");
 	background-color: #ffffff;
 	background-repeat: no-repeat;
-  	background-position: 68px 0px;
+  	background-position: 58px -10px;
 	padding: 30px 0px;
+}
+.bureau #starline.star {
+	background-image: url("images/ster.png");
+  	background-position: 480px -10px;
 }
 #toggle-sitemap {
 	background-image: url("images/triangle_down.png");
@@ -1198,16 +1204,16 @@ article.comment {
 .bureau #starline,
 .single-profile #site-generator,
 .single-profile #toggle-sitemap,
-.single-profile #starline,
+/* .single-profile #starline, */
 .single-portfolios #site-generator,
 .single-portfolios #toggle-sitemap,
-.single-portfolios #starline,
+/* .single-portfolios #starline, */
 .portfolio #site-generator,
-.portfolio #toggle-sitemap,
-.portfolio #starline{
+.portfolio #toggle-sitemap
+/*, .portfolio #starline */{
 	margin: 0 38px 0 178px;
 }
-.single-portfolios #site-generator, .single-portfolios #toggle-sitemap, .single-portfolios #starline {
+.single-portfolios #site-generator, .single-portfolios #toggle-sitemap/* , .single-portfolios #starline */ {
 	margin-right: -120px;
 }
 
@@ -1238,6 +1244,8 @@ article.comment {
 .cycle-wrap, .flickr-gallery {
 	height: 150px !important;
 }
+/*
 #exposeMask, body, html {
 	height: 100% !important;
 }
+*/

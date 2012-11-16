@@ -12,7 +12,16 @@
 				<?php if ( is_page_template('bureau.php')|is_page_template('klanten.php')|is_page_template('ditzijnwij.php')|is_page_template('contact.php') ) {echo"bureau";}
 				if ( is_page_template('portfolio.php')) {echo"portfolio";} ?>
 			" role="contentinfo">
-			<div id="starline"></div>
+			<div id="starline" class="<?php
+			function randomfooterimage() {
+				$total = "2";
+				$start = "1";
+				$random = mt_rand($start, $total);
+				if ($random==2){
+				echo "star";
+			}}
+			randomfooterimage();
+			?>"></div>
 			<div id="toggle-sitemap">
 			<a id="toggle-sitemap-link" href="#">sitemap</a>
 			</div>
