@@ -32,12 +32,13 @@
     <p><?php echo(types_render_field("profile-quote", array("raw"=>"true"))); ?></p>
     </a>
     <a href="<?php echo get_permalink(); ?>">
-    <h6><?php the_title(); ?></h6>
+    <h6><?php the_title(); ?><br>
+    <span style="font-weight:normal;font-size:12px;"><?php echo(types_render_field("job-title", array("raw"=>"true"))); ?></span></h6>
     </a>
     <?php elseif (is_page('Alumni')): ?>
     <p><?php echo(types_render_field("profile-quote", array("raw"=>"true"))); ?></p>
     <h6><?php the_title(); ?><br>
-    <span style="font-weight:normal;"><?php echo(types_render_field("job-title", array("raw"=>"true"))); ?></span></h6>
+    <span style="font-weight:normal;font-size:12px;"><?php echo(types_render_field("job-title", array("raw"=>"true"))); ?></span></h6>
     <?php endif; ?>
     <div class="social">
 	    <p>

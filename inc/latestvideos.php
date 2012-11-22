@@ -16,14 +16,7 @@
 		}
 ?>
 	</div>
-				<?php
-			    // Get the ID of a given category
-			    $category_id = get_cat_ID( 'Videos' );
-			
-			    // Get the URL of this category
-			    $category_link = get_category_link( $category_id );
-			?>
-			
-			<!-- Print a link to this category -->
-			<a class="archive-link" href="<?php echo esc_url( $category_link ); ?>" title="Nieuws">video archief</a>
+
+			<!-- Print a link to this archive -->
+	<a class="archive-link" href="<?php $videosarchive = get_post_type_archive_link( 'videos' ) ; echo esc_url( $videosarchive ); ?>" title="Nieuws">video archief</a>
 </div>

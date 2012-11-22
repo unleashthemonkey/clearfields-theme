@@ -4,6 +4,10 @@
  * @subpackage handcrafted
  */
 
+	wp_enqueue_script( 'page_animations', get_template_directory_uri() . '/js/page_animations.js', array( 'jquery' ), '2012-08-13' );
+		wp_enqueue_script( 'functions_page', get_template_directory_uri() . '/js/functions_page.js', array( 'jquery' ), '2012-08-13' );
+
+
 get_header(); ?>
 
 		<section id="primary" role="region">
@@ -26,7 +30,6 @@ get_header(); ?>
 
 					<div class="entry-content">
 						<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'themename' ); ?></p>
-						<?php get_search_form(); ?>
 					</div><!-- .entry-content -->
 				</article><!-- #post-0 -->
 
@@ -35,5 +38,5 @@ get_header(); ?>
 			</div><!-- #content -->
 		</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php /* get_sidebar(); */ ?>
 <?php get_footer(); ?>

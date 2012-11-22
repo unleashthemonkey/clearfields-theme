@@ -21,7 +21,7 @@
 				<?php the_post_thumbnail( 'book-thumb' ); ?>
 			</a>
 			<h4><?php the_title(); ?></h4>
-			<?php if ( !is_single()){
+			<?php if ( is_page_template('prikbord.php')){
 			 the_excerpt(); 
 			}?>
 			<a href="<?php the_permalink(); ?>">
@@ -32,4 +32,6 @@
 	</ul>
 	<?php } ?>	
 	</div>
+	<!-- Print a link to this category -->
+	<a class="archive-link" href="<?php $booksarchive = get_post_type_archive_link( 'books' ) ; echo esc_url( $booksarchive ); ?>" title="Nieuws">boeken archief</a>
 </div>

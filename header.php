@@ -86,7 +86,7 @@ if(is_page_template('ditzijnwij.php')){?>
 				</div>
 	
 				<div class="centerwrapper<?php if ( is_page_template('ditzijnwij.php')) {echo" ditzijnwij";} if ( is_page_template('portfolio.php')) {echo" portfolio";} ?>">
-				<?php if ( !is_page_template('prikbord.php')&!is_single()&!is_category()&!is_archive()) { ?>
+				<?php if ( !is_page_template('prikbord.php')&!is_page_template('basecamp.php')&!is_search()&!is_single()&!is_category()&!is_archive()) { ?>
 				<nav id="access" class="" role="article">
 					<!-- Adds menu title and byline -->
 					<?php 
@@ -101,7 +101,7 @@ if(is_page_template('ditzijnwij.php')){?>
 					} elseif ( is_page_template('contact.php') ) {
 						wp_nav_menu( array( 'theme_location' => 'contact' ) );
 					} else {
-						wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Returns false when 'about.php' is not being used.
+						// No Menu
 					}
 					}
 					?>
@@ -112,7 +112,7 @@ if(is_page_template('ditzijnwij.php')){?>
 		<div id="contentwrapper" class="<?php if ( is_page_template('portfolio.php')) {echo" portfolio";}?>">
 		<div id="main"  class=" clearfix
 			<?php
-				if ( is_page_template('bureau.php')|is_page_template('klanten.php')|is_page_template('ditzijnwij.php')||is_page_template('contact.php') ) {echo"bureau";}
+				if ( is_page_template('bureau.php')|is_page_template('klanten.php')|is_page_template('ditzijnwij.php')|is_page_template('contact.php')|is_page_template('basecamp.php')|is_search() ) {echo"bureau";}
 				if ( is_page_template('ditzijnwij.php') ) {echo" ditzijnwij";}
 				if ( is_page_template('portfolio.php') ) {echo" portfolio";}
 				if ( is_single() ) {echo"single";}
