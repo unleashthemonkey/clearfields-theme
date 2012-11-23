@@ -3,9 +3,10 @@
  * @package WordPress
  * @subpackage handcrafted
  */
+ 
 ?>
 		<div id="secondary portfolios" class="widget-area">
-			<?php if ( ! dynamic_sidebar( 'portfolios' ) ) : ?>
+			<?php $sidebar_id = the_slug() . '-sidebar' ; if ( ! dynamic_sidebar( $sidebar_id ) ) : ?>
 
 				<aside id="archives" class="widget" role="complementary">
 					<h2 class="widget-title"><?php _e( 'Archives', 'themename' ); ?></h2>
