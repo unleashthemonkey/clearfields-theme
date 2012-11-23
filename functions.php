@@ -261,6 +261,13 @@ add_theme_support( 'post-formats', array( 'video', 'gallery', 'link') );
 /**
  * Register widgetized area and update sidebar with default widgets
  */
+ 
+function the_slug() {
+    $post_data = get_post($post->ID, ARRAY_A);
+    $slug = $post_data['post_name'];
+    return $slug; 
+}
+
 function handcraftedwp_widgets_init() {
 	register_sidebar( array (
 		'name' => __( 'Sidebar', 'themename' ),
@@ -271,37 +278,19 @@ function handcraftedwp_widgets_init() {
 		'after_title' => '</h4>',
 	) );
 	register_sidebar( array (
-		'name' => __( 'Portfolios Algemeen', 'themename' ),
-		'id' => 'portfolios_algemeen',
+		'name' => __( 'Portfolios', 'themename' ),
+		'id' => 'portfolios',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s" role="complementary">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
 	) );
-
-}
-add_action( 'init', 'handcraftedwp_widgets_init' );
-
-function the_slug() {
-    $post_data = get_post($post->ID, ARRAY_A);
-    $slug = $post_data['post_name'];
-    return $slug; 
-}
-
-add_action( 'init', 'portfolios_sidebars' );
-/**
- * Create widgetized sidebars for each portfolio
- *
- * This function is attached to the 'init' action hook.
- */
-
-function portfolios_sidebars() {
 	$args = array( 'post_type' => 'portfolios', 'numberposts' => -1, 'post_status' => 'publish'); 
 	$portfolios = get_posts( $args );
+	global $post;
 	if ($portfolios) {
 		foreach ( $portfolios as $post ) {
-			setup_postdata($post);
-			$portfoliotitle = the_title();
+			$portfoliotitle = get_the_title();
 			$portfolioslug = the_slug();
 			register_sidebar( array(
 				'name' => $portfoliotitle,
@@ -313,9 +302,9 @@ function portfolios_sidebars() {
 				'after_title' => '</h4>',
 			) );
 		}
-		wp_reset_postdata();
 	}
 }
+add_action( 'init', 'handcraftedwp_widgets_init' );
 
 
 /*
