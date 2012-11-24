@@ -898,6 +898,8 @@ background: #E4402F url(images/icon-letter.png) no-repeat scroll left center;
 #home #access ul ul li.film a {
 background: #E4402F url(images/icon-film.png) no-repeat scroll left center;
 }
+
+
 #home #access li:hover > a{
 	background-color: transparent;
 }
@@ -921,6 +923,24 @@ background: #E4402F url(images/icon-film.png) no-repeat scroll left center;
 	display: block;
 }
 */
+
+
+#site-generator ul ul li.rss a {
+padding: 2px 0 0 20px;
+background: transparent url(images/rss.png) no-repeat scroll left center;
+}
+#site-generator ul ul li.vimeo a {
+padding: 2px 0 0 20px;
+background: transparent url(images/vimeo.png) no-repeat scroll left center;
+}
+#site-generator ul ul li.twitter a {
+padding: 2px 0 0 20px;
+background: transparent url(images/twitter.png) no-repeat scroll left center;
+}
+#site-generator ul ul li.flickr a {
+padding: 2px 0 0 20px;
+background: transparent url(images/flickr.png) no-repeat scroll left center;
+}`
 
 
 /*
@@ -1235,7 +1255,7 @@ article.comment {
 	background-color: #fff;
 	background-image: url("images/sitemap_bg.png");
 	background-repeat: repeat-x;
-	padding: 20px;
+	padding: 25px;
 	overflow: hidden;
 	zoom: 1;
 	list-style: none;
